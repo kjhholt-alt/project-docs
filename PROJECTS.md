@@ -1,10 +1,43 @@
 # Active Projects — Master Tracker
-> Last updated: 2026-02-12 (Session 7 testing complete)
+
+> Last updated: 2026-02-12 (Website Factory Session 2 in progress)
 > Update this file after every session. Paste into Claude.ai Projects for instant context sync.
 
 ---
 
+## 🟢 Website Factory
+
+**Goal:** Config-driven website template system — one codebase, infinite client sites. Change a JSON config, entire site transforms. Foundation for a web development business.
+**Revenue:** Per-client website fees ($500-2000 per site) + monthly hosting/maintenance
+**Repo:** github.com/kjhholt-alt/website-factory
+**Local:** C:\Users\GQETCUM\Desktop\Projects\website-factory
+**Stack:** Next.js 14, TypeScript, Tailwind, shadcn/ui, Prisma + SQLite/Postgres, NextAuth
+
+| Session | Task | Status | Date |
+|---------|------|--------|------|
+| 1 | Template system + first client site (Soccer Coach) | ✅ Done | 2026-02-12 |
+| 2 | Forms API integration, validation, admin data wiring | 🔄 In Progress | 2026-02-12 |
+| 3 | Admin dashboard full implementation | ⬜ Not started | |
+| 4 | Email notifications + polish | ⬜ Not started | |
+| 5 | Second client template (dental/restaurant) to prove config swap | ⬜ Not started | |
+| 6 | Stripe payments & client billing | ⬜ Not started | |
+| 7 | Testing, deployment, launch | ⬜ Not started | |
+
+**Pages:** 13 (7 public: home, about, programs, schedule, contact, faq, register + 6 admin: login, dashboard, registrations, calendar, messages, settings)
+**API Routes:** 7 (register, contact, waiver, admin/registrations, admin/events, admin/messages, auth)
+**Components:** 19 (9 UI primitives, 5 home sections, 3 layout, 2 forms)
+**Database:** 4 models (Registration, ContactSubmission, CalendarEvent, AdminUser)
+**First client:** Elite Soccer Academy (soccer coaching business)
+**Tests:** Production build passes (22/22 routes), zero TypeScript errors
+**Current blockers:** GitHub repo needs to be created and pushed
+**Key decisions:** Config-driven JSON template, SQLite dev / Postgres prod, NextAuth credentials, shadcn/ui, no Stripe for initial build
+**Next step:** Complete Session 2 (form wiring + admin data), then deploy
+**Deploy URL:** [not yet deployed]
+
+---
+
 ## 🟢 AI Chess Coach
+
 **Goal:** AI-powered chess improvement app with playable game, analysis, puzzles, coaching
 **Revenue:** $7/mo subscription (free tier + Pro)
 **Repo:** github.com/kjhholt-alt/ai-chess-coach
@@ -37,6 +70,7 @@
 ---
 
 ## 🟢 AI Finance Brief
+
 **Goal:** Daily AI-generated market summary delivered by email before market open
 **Revenue:** $9/mo subscription (free delayed brief + Pro early delivery)
 **Repo:** github.com/kjhholt-alt/ai-finance-brief
@@ -64,6 +98,7 @@
 ---
 
 ## 🟡 Trade Journal
+
 **Goal:** AI-powered trading journal with CSV import, pattern analysis, performance tracking
 **Revenue:** TBD (sidelined for now)
 **Repo:** github.com/kjhholt-alt/trade-journal
@@ -81,6 +116,7 @@
 ---
 
 ## 🟡 PC Bottleneck Analyzer
+
 **Goal:** Scan PC hardware, detect bottlenecks, AI-powered optimization recommendations
 **Revenue:** Free tool -> affiliate links + Pro tier for AI features later
 **Repo:** [not created yet]
@@ -101,6 +137,7 @@
 ---
 
 ## 🔵 Work Projects
+
 **Repo:** [path/to/repo]
 **Current focus:** [what you're working on]
 **Last session:** [date — what was done]
@@ -110,6 +147,7 @@
 ---
 
 ## 📊 Token Usage Strategy
+
 **Daily target:** 2-3 sessions (mix of project building + refactors/docs/tests)
 **Session prompts doc:** token-maximization-playbook.md
 **Existing projects to refactor:** Stock app, Chess roguelike, CRM, Music visualizer, PoE assistant
@@ -117,12 +155,14 @@
 ---
 
 ## 💡 Ideas Backlog (Not Started)
+
 - Trade Journal / Backtest Analyzer (sidelined — revisit after Finance Brief + Chess Coach are live)
 - [add ideas here as they come up]
 
 ---
 
 ## 📝 How to Use This File
+
 1. After every Claude Code session, update the relevant project's status
 2. When starting a chat in Claude.ai Projects, paste or upload this file for instant context
 3. Keep it honest — mark things 🔴 if stuck, don't pretend sessions went perfectly
