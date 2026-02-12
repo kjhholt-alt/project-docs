@@ -1,6 +1,6 @@
 # Active Projects — Master Tracker
 
-> Last updated: 2026-02-12 (Portfolio Session 1 complete)
+> Last updated: 2026-02-12 (Gumroad Factory Session 1 complete)
 > Update this file after every session. Paste into Claude.ai Projects for instant context sync.
 
 ---
@@ -25,7 +25,32 @@
 **Stack:** Next.js 15, TypeScript, React 19, Tailwind CSS, framer-motion, next-themes
 
 | Session | Task | Status | Date |
+|------
+
+## 🟢 Gumroad Product Factory
+
+**Goal:** One repo, one system, infinite digital products. Each product gets its own directory with everything Gumroad needs — deliverables, sales copy, cover specs, metadata — all generated and validated systematically.
+**Revenue:** Direct product sales via Gumroad ($9-79 per product)
+**Repo:** github.com/kjhholt-alt/gumroad-factory
+**Local:** C:\Users\GQETCUM\gumroad-factory
+**Stack:** Markdown, Bash, TypeScript (validation scripts), Gumroad
+
+| Session | Task | Status | Date |
 |---------|------|--------|------|
+| 1 | Full factory build + first product (AI Prompt Templates Pack) | ✅ Done | 2026-02-12 |
+| 2 | Cover image, Gumroad upload, test purchase | ⬜ Not started | |
+| 3 | Second product (Side Project Launch Checklist) | ⬜ Not started | |
+
+**Products:** 1 ready to upload (AI Prompt Templates $24), 9 planned
+**First product:** AI Prompt Templates Pack — 10 battle-tested developer prompts, 6,653 lines of content, $24 PWYW
+**Scripts:** validate-product.ts (completeness checker), package-product.sh (ZIP packager), generate-listing.ts (listing preview)
+**Docs:** Gumroad upload checklist, product ideas backlog (10 products ranked), pricing strategy framework
+**Current blockers:** Cover image needs manual creation (Canva/Figma), then upload to Gumroad
+**Key decisions:** $24 PWYW for first product, markdown format (model-agnostic), one repo for all products
+**Next step:** Create cover image, upload to Gumroad, make test purchase
+**Deploy URL:** [not yet on Gumroad]
+
+------|------|--------|------|
 | 1 | Full site build (4 pages, 7 components, dark/light theme, animations) | ✅ Done | 2026-02-12 |
 | 2 | Vercel deployment + contact form backend + real images | ⬜ Not started | |
 
