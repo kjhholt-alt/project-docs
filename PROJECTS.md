@@ -1,6 +1,6 @@
 # Active Projects — Master Tracker
 
-> Last updated: 2026-02-12 (Website Factory Session 3 complete)
+> Last updated: 2026-02-12 (Portfolio Session 1 complete)
 > Update this file after every session. Paste into Claude.ai Projects for instant context sync.
 
 ---
@@ -14,7 +14,32 @@
 **Stack:** Next.js 14, TypeScript, Tailwind, shadcn/ui, Prisma + SQLite/Postgres, NextAuth
 
 | Session | Task | Status | Date |
+|------
+
+## 🟢 Developer Portfolio
+
+**Goal:** Personal portfolio site to showcase projects and attract freelance clients. Professional web presence for all other projects.
+**Revenue:** Client acquisition funnel (not direct revenue)
+**Repo:** github.com/kjhholt-alt/portfolio
+**Local:** C:\Users\GQETCUM\portfolio
+**Stack:** Next.js 15, TypeScript, React 19, Tailwind CSS, framer-motion, next-themes
+
+| Session | Task | Status | Date |
 |---------|------|--------|------|
+| 1 | Full site build (4 pages, 7 components, dark/light theme, animations) | ✅ Done | 2026-02-12 |
+| 2 | Vercel deployment + contact form backend + real images | ⬜ Not started | |
+
+**Pages:** 4 (Home, Projects, Services, Contact)
+**Components:** 7 (Navigation, Footer, ThemeProvider, ThemeToggle, AnimatedSection, ProjectCard, TechStack)
+**Design:** Syne + Outfit + JetBrains Mono fonts, warm amber/gold accent (#e8a019) on dark, dot-grid patterns, scroll animations
+**Data:** Centralized src/data/projects.ts — edit projects in one place
+**Tests:** Production build passes (7/7 routes), zero TypeScript errors
+**Current blockers:** None — ready for deployment
+**Key decisions:** Amber/gold accent (avoids generic AI purple), Syne display font, framer-motion scroll animations, next-themes dark default, route layouts for per-page SEO
+**Next step:** Deploy to Vercel, wire up contact form (Resend), add real project screenshots
+**Deploy URL:** [not yet deployed]
+
+------|------|--------|------|
 | 1 | Template system + first client site (Soccer Coach) | ✅ Done | 2026-02-12 |
 | 2 | Forms API integration, validation, admin data wiring | ✅ Done | 2026-02-12 |
 | 3 | Full admin CRUD, calendar events, CSV export, seed script | ✅ Done | 2026-02-12 |
