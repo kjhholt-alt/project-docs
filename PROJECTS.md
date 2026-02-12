@@ -1,6 +1,6 @@
 # Active Projects — Master Tracker
 
-> Last updated: 2026-02-12 (Website Factory Session 2 in progress)
+> Last updated: 2026-02-12 (Website Factory Session 3 complete)
 > Update this file after every session. Paste into Claude.ai Projects for instant context sync.
 
 ---
@@ -16,22 +16,22 @@
 | Session | Task | Status | Date |
 |---------|------|--------|------|
 | 1 | Template system + first client site (Soccer Coach) | ✅ Done | 2026-02-12 |
-| 2 | Forms API integration, validation, admin data wiring | 🔄 In Progress | 2026-02-12 |
-| 3 | Admin dashboard full implementation | ⬜ Not started | |
-| 4 | Email notifications + polish | ⬜ Not started | |
+| 2 | Forms API integration, validation, admin data wiring | ✅ Done | 2026-02-12 |
+| 3 | Full admin CRUD, calendar events, CSV export, seed script | ✅ Done | 2026-02-12 |
+| 4 | Email notifications + polish + deployment | ⬜ Not started | |
 | 5 | Second client template (dental/restaurant) to prove config swap | ⬜ Not started | |
 | 6 | Stripe payments & client billing | ⬜ Not started | |
 | 7 | Testing, deployment, launch | ⬜ Not started | |
 
-**Pages:** 13 (7 public: home, about, programs, schedule, contact, faq, register + 6 admin: login, dashboard, registrations, calendar, messages, settings)
-**API Routes:** 7 (register, contact, waiver, admin/registrations, admin/events, admin/messages, auth)
-**Components:** 19 (9 UI primitives, 5 home sections, 3 layout, 2 forms)
+**Pages:** 13 (7 public + 6 admin)
+**API Routes:** 11 (register, contact, waiver, admin/registrations, admin/events, admin/messages, admin/export, admin/profile, admin/password, auth)
+**Components:** 21 (9 UI, 5 home, 3 layout, 2 forms, 2 admin actions)
 **Database:** 4 models (Registration, ContactSubmission, CalendarEvent, AdminUser)
 **First client:** Elite Soccer Academy (soccer coaching business)
 **Tests:** Production build passes (22/22 routes), zero TypeScript errors
-**Current blockers:** GitHub repo needs to be created and pushed
+**Current blockers:** None — ready for deployment
 **Key decisions:** Config-driven JSON template, SQLite dev / Postgres prod, NextAuth credentials, shadcn/ui, no Stripe for initial build
-**Next step:** Complete Session 2 (form wiring + admin data), then deploy
+**Next step:** Session 4 — Email notifications, polish, Vercel deployment
 **Deploy URL:** [not yet deployed]
 
 ---
