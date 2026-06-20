@@ -11,6 +11,7 @@ Central repository for project plans, session guides, and reference docs. Use th
 | `Claude Agent Watch.pdf` | Guide for running Claude Code agents and agent workflows |
 | `idea hopper v1.pdf` | Idea generation and project planning playbook |
 | `PC bottleneck app session.pdf` | Session plan for PC Bottleneck Analyzer project |
+| `wwi-documentary/` | WWI documentary YouTube project — AI-assisted strategy, style teardown, pipeline, prompts |
 
 ## Active Projects
 

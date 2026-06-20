@@ -32,6 +32,7 @@
 | 21 | LearingChess | 📦 Archive | Django + React (no git) | N/A | — |
 | 22 | spotify-visualizer | 📦 Abandoned | Empty project | N/A | — |
 | 23 | TrioMoeny | 📦 Empty | Nothing | N/A | — |
+| 24 | WWI Documentary (Verdun) | 📄 Scaffold | Python, Claude API, Whisper, TTS | YouTube | Jun 20 |
 
 ---
 
@@ -363,6 +364,34 @@
 **Local:** `C:\Users\Kruz\Desktop\Projects\project-docs`
 **Purpose:** Central hub for syncing Claude Code context across sessions
 **Contains:** This file (PROJECTS.md), IMPROVE.md, session PDFs, build plans
+
+---
+
+## 📄 WWI Documentary Project (codename: Verdun)
+
+**Goal:** Long-form WWI documentary YouTube channel that reverse-engineers the
+*craft* of premium WWII docs (Tom Hanks-narrated doc + Dan Carlin) — narration
+tone, pacing, story selection — and rebuilds that **style** around original WWI
+content. Copy the method/feel, never the script/footage/voice.
+**Repo (planned):** github.com/kjhholt-alt/wwi-doc-engine
+**Docs:** `project-docs/wwi-documentary/` (strategy, style teardown, AI pipeline,
+episode template, build-session plan, ready-to-run prompts)
+**Stack:** Python orchestration, Claude API (long context), Whisper (transcribe
+references), neural TTS (draft VO), DaVinci Resolve (edit)
+**Status:** 📄 Scaffold complete (Jun 20). Nothing built yet.
+
+**How AI is used:** (1) Whisper transcribes the reference docs → (2) Claude tears
+down the transcript into a measurable `STYLE_SPEC.md` + 12-point checklist →
+(3) pipeline runs topic → sourced research → outline → narration in the learned
+voice → production pack, with human checkpoints at research/script/final cut.
+
+**Guardrails:** every historical claim is sourced (anti-hallucination prompts);
+public-domain WWI visuals only; AI-generated b-roll must be labeled; mimic style
+(not copyrightable), never reproduce their content.
+
+**First episode (pipeline shakedown):** The Christmas Truce, 1914.
+**Next step:** Session 1 — build the teardown harness (`transcribe.py` +
+`teardown.py`). Kickoff prompt is in `wwi-documentary/04_SESSION_PLAN.md`.
 
 ---
 
