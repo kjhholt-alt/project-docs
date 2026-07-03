@@ -44,9 +44,24 @@ notes, Orbit, board, curator): fix the weak seams, write the post-Fable
 operating doc (what Sonnet/Opus run daily, what waits for top-model
 access), update all STATUS files + memory, queue the next 2 weeks.
 
+## REVISED 2026-07-02 (late): two standing focus threads all week
+
+Kruz directive: really focus on (1) **HERALD** — the zero-touch sales/
+marketing machine (spec: ai-ops-consulting/HERALD.md, Fable architecture;
+his sales job shrinks to Send/Skip taps in Discord) and (2) **the Brain**
+— Atlas unified over EVERYTHING (memory + notes + Greenlight + magpie +
+YouTube/clipforge; brainfeed exporters). Both run as daily fleet lanes
+Jul 3-7 alongside the flagships above; HERALD's day-by-day is in its spec
+(D1 deskprep -> D2 artifact generator -> D3 first live batch, Kruz-tapped
+-> D4 sequencing -> D5 second vertical -> D6 weekly grade). Jul 6
+money-brain day absorbs HERALD's first-grade review; Jul 7 harvest covers
+both threads' operating docs. Cold-send rail unchanged: every live send =
+a Kruz button tap.
+
 ## Standing every day
 - 8:10 brief (curator-fed from Jul 3) -> Kruz `!ok`
 - Pump keeps 3 lanes hot; results post as outcomes
+- HERALD + Brainfeed lanes advance daily (see above)
 - Board artifact redeployed with material state changes
 - Evening: one-line day recap to #claude-chat
 
