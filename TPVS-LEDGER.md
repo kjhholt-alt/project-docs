@@ -70,6 +70,30 @@ heuristics. Passive mode is thin today too — only 3 dispatch-log lines
 carry the new model=/profile=/reason= fields (hours old) and 1 has reached
 a terminal outcome — but the join is proven and free from here on.
 
+## 2026-07-04 — overnight waves (the full-send night)
+
+| Lane | Tokens | Verified shipped unit |
+|---|---:|---|
+| 0.3.0 integrator (v4) | 114,895 | seam wiring + shots, 506 tests |
+| 0.3.0 Codex ship-gate | 65,855 | SHIP verdict, 5 areas |
+| 0.3.0 packager | 129,443 | vpk cut + INSTALLED + STATUS |
+| Flight recorder (v6) | 239,826 | recorder shipped, 107 tests |
+| Atlas graph export | 117,763 | contract deployed live |
+| Knowledge reader | 120,651 | orbit-ops reader, 26 tests |
+| **Cartograaf map (Lane C)** | **539,139** | the BRAIN tab, 581 tests |
+| Queue triage | 135,682 | 8 ghosts cleared + 3 proposals |
+| **Night total (8 lanes)** | **~1.46M** | **~8 units ≈ 183k/unit** |
+
+Night verdicts: (1) the L-size flagship unit (Cartograaf) costs ~4.5x a
+normal unit — flagships are their own TPVS class; excluding it the night
+ran ~132k/unit, near day-zero's 119k. (2) Crash overhead persists (v3/v5
+died to a host crash mid-wave; salvage discipline held the loss to
+near-zero because everything commits granularly — the doctrine pays).
+(3) The routing table went from idea → installed → governing dispatch in
+under 24h; passive mode makes it self-improving from here. (4) Two render
+bugs were caught ONLY by screenshot verification, never by 581 green
+tests — visual verify bars are load-bearing, keep paying for them.
+
 *Method: lane tokens = subagent io reported at completion; orchestrator =
 meters.json fable-lane delta over the day; "verified unit" = merged/
 deployed change that cleared its verify bar. Estimates, honestly labeled.*
