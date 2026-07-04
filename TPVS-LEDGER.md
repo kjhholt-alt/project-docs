@@ -52,8 +52,23 @@ under our feet: **the router already logs (id, model, profile, reason) per
 dispatch, and the queue records outcome + verify result.** Passive mode =
 join dispatch log × outcomes × per-lane token telemetry → the same
 routing-table.json, free, from live traffic, forever. Replay mode remains
-for classes with thin traffic. Harness upgrade (checkpointed replay +
-passive collector) lands at next work window; spec fields already emitted.
+for classes with thin traffic.
+
+**Shipped (gl-0044, 2026-07-04):** the harness upgrade landed —
+checkpointed `replay` (every `ReplayRecord` fsynced to `--records-out` the
+instant it completes, `--resume` skips finished `(sample, model)` pairs)
+and a `passive` subcommand that joins the dispatch log with queue outcomes,
+zero token spend, method-labeled `passive-live-traffic`. 35 new offline
+tests, 135 total green. Re-ran the full 17-sample x {haiku, sonnet} replay
+live with checkpointing on: it hit a real 240s timeout under fleet
+contention and recorded it instead of dying — proof the v1 failure mode is
+fixed. 15/34 pairs landed this session (5 classes); all honestly flagged
+`no_clear_pass` at n=1-2/class (expected day-one noise, not a bug).
+Installed to `~/.operator/greenlight/routing-table.json`; confirmed
+`route_model()` loads it and correctly falls through flagged entries to
+heuristics. Passive mode is thin today too — only 3 dispatch-log lines
+carry the new model=/profile=/reason= fields (hours old) and 1 has reached
+a terminal outcome — but the join is proven and free from here on.
 
 *Method: lane tokens = subagent io reported at completion; orchestrator =
 meters.json fable-lane delta over the day; "verified unit" = merged/
