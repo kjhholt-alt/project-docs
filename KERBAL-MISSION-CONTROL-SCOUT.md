@@ -54,3 +54,17 @@ load/save (`load`, `quicksave`) · launch craft file to pad (`launch_vessel(craf
 6. Multi-instance parallelism (deferred)
 
 **Caveats in one line:** a real game window must run somewhere (no headless), the memory-leak watchdog is mandatory day-one, KSP isn't installed yet, and craft design starts template-based — none of which blocks Phase 1.
+
+## 6. Independent re-verification (second dispatch pass, 2026-07-05)
+
+gl-0083 was dispatched twice (parallel Greenlight lanes, same known collision pattern as `project_greenlight_shared_checkout_collision`). Rather than duplicate this report, this pass re-derived every load-bearing claim from scratch and cross-checked it against the above. All of it holds:
+
+- **KSP1 frozen at 1.12.5, KSP2 dead, kRPC 0.5.4 (2024-06-10) actively maintained** — independently confirmed via web search + direct fetch of `github.com/krpc/krpc`.
+- **`pip install krpc` is Production/Stable on PyPI**, requires Python ≥3.7 — confirmed via PyPI fetch.
+- **Server auto-start is real**, not a guess: kRPC's own getting-started docs describe an explicit "Auto-start server" advanced setting ("the server will start automatically when the game loads") — confirmed by direct fetch, corroborates §2 above.
+- **arXiv 2404.00413 "Language Models are Spacecraft Operators" (Rodriguez-Fernandez et al.) is real and ranked 2nd in the KSPDG challenge** — independently re-fetched and confirmed (title, authors, 2nd-place claim all check out). **Add as a companion citation:** [arXiv 2505.19896](https://arxiv.org/abs/2505.19896), a related/follow-on 2025 paper on the same benchmark, evidence the LLM-agent-flies-KSP research lane is still active, not a one-off.
+- **KSPDG's own docs state the constraint plainly**: "the KSP engine lacks capabilities for parallel, accelerated, and headless operations" — matches §2's "no headless mode" call exactly, and additionally names **PhysicsRangeExtender** as a companion mod KSPDG installs alongside kRPC (worth a look for Mun/Minmus-range missions in P3+).
+
+**The gap this pass closes — the balatrobot analogy, named directly in the gl-0083 brief, was never actually verified or cited:** [coder/balatrobot](https://github.com/coder/balatrobot) is real, active, and architecturally identical in spirit — a game mod serves a JSON-RPC 2.0 API, a Python package manages the game process + injects the mod, and [coder/balatrollm](https://github.com/coder/balatrollm) drives it with an LLM to play Balatro. kRPC is the same shape (mod-hosted RPC server + Python client), just 8+ years more mature and for a completely different genre. This confirms the pattern isn't novel risk — Kruz already has a working precedent for "LLM plays a game through a mod-exposed RPC API" in his own project vocabulary, and this project is a sibling of it, not a first attempt.
+
+**No new risks surfaced.** No heavy build has started (`game-forge/kerbal-mission-control/` does not exist yet) — the "Kruz-reviewed before heavy build" gate in the spec is intact. Verdict stands: **GO-WITH-CAVEATS.**
