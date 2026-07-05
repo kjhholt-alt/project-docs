@@ -1,8 +1,10 @@
-# RESIDENT-IDENTITY-KIT.md
+# EMISSARY-IDENTITY-KIT.md
 
-Identity kit for the Resident — Kruz's always-on assistant. v1 goes live on the Discord bridge (one persistent resumable session); moves to the MS-A2 this week. Pattern revived from Prime (Feb 2026, ClawBot-era): SOUL / BOOT / HEARTBEAT. The code is dead; the pattern was right. Drop-in targets: `SOUL.md`, `BOOT.md`, `HEARTBEAT.md` next to the bridge, `memory/` alongside.
+Identity kit for **EMISSARY** — Kruz's always-on assistant. **Named by Kruz 2026-07-05: "Emissary — Latin for one sent out on a mission. This should showcase how strong we should make it."** The name is the ambition spec: not a watchman, an envoy — sent in his name, carrying granted authority and not one inch more, coming back with results.
 
-*Drafted 2026-07-04 by a cloud lane during the burn night. Companion docs: [ASSISTANT-V1-PLAN.md](ASSISTANT-V1-PLAN.md) (the build), [ASSISTANT-STACK-INVENTORY.md](ASSISTANT-STACK-INVENTORY.md), [ASSISTANT-HARNESS-RESEARCH.md](ASSISTANT-HARNESS-RESEARCH.md). Name decision pending Kruz.*
+v1 is LIVE on the Discord bridge (one persistent resumable session, gl-0063); moves to the MS-A2 this week. Pattern revived from Prime (Feb 2026, ClawBot-era): SOUL / BOOT / HEARTBEAT. The code is dead; the pattern was right. Drop-in targets: `SOUL.md`, `BOOT.md`, `HEARTBEAT.md` next to the bridge, `memory/` alongside. The Emissary identity block is already merged into the live `resident_instructions.md` (2026-07-05); the fuller SOUL/BOOT/HEARTBEAT below deploy with the M2 (MS-A2) build.
+
+*Drafted 2026-07-04 by a cloud lane during the burn night; naming decided 2026-07-05. Companion docs: [ASSISTANT-V1-PLAN.md](ASSISTANT-V1-PLAN.md) (the build), [ASSISTANT-STACK-INVENTORY.md](ASSISTANT-STACK-INVENTORY.md), [ASSISTANT-HARNESS-RESEARCH.md](ASSISTANT-HARNESS-RESEARCH.md). Read "the Resident" in the drafts below as Emissary throughout.*
 
 ---
 
@@ -185,7 +187,7 @@ Prime is retired; the name retires with the code. Candidates, matched to the hou
 | **Porter** | The lodge porter lives at the front door, takes messages, sees all comings and goings, never runs the college. Literal "front door" role. Risk: reads as luggage or beer. |
 | **Keeper** | Lighthouse keeper — alone, always on, and the light must never be fake. Memory-keeper and watch-keeper in one. Slightly generic. |
 
-**Recommendation: Vigil.** It encodes the prime directive (a vigil exists so the watch stays true through the night), fits the always-on residency literally, sits naturally beside Murmur and Orbit in the fleet, and carries no implied authority the rails would contradict. Runner-up: Steward, if Kruz wants the role stated literally. "The Resident" stays as the generic term either way, like "the daemon."
+**The recommendation was Vigil; Kruz overruled with a better answer: EMISSARY** (2026-07-05) — "Latin for one sent out on a mission. This should showcase how strong we should make it." Where every candidate above describes *watching*, Emissary describes *acting with a mandate* — which is the actual M3 destination (the judgment layer that initiates missions, not just briefs). The propose-never-approve rail reads even better under this name: an emissary negotiates in the principal's name; the principal signs the treaties. "The Resident" survives as the generic term for the daemon role, like "the bridge."
 
 ---
 
