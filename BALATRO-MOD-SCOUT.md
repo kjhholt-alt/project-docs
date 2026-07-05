@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-07-05 — WRONG GAME.** Kruz meant a trading-card SIM game (likely TCG Card Shop Simulator — confirm before scouting), not Balatro. Kept as reference: the Balatro stack research stands on its own if that itch ever returns. The Fleet joker pack spec built on this guess was removed.
+
 # Balatro Modding Scout Report — 2026-07-04
 
 Research scout on the Balatro modding stack, the scene, and what building our own mod would take. All claims web-verified with cited URLs. *Origin: Kruz's mid-game note 2026-07-05 ("mod the card game... played a Pokemon card mod and loved it"); researched by a cloud lane in the dying quota window. Game guess = Balatro (unconfirmed — see the StS2 note at the end if wrong).*
