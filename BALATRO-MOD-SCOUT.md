@@ -1,4 +1,4 @@
-> **SUPERSEDED 2026-07-05 — WRONG GAME.** Kruz meant a trading-card SIM game (likely TCG Card Shop Simulator — confirm before scouting), not Balatro. Kept as reference: the Balatro stack research stands on its own if that itch ever returns. The Fleet joker pack spec built on this guess was removed.
+> **SUPERSEDED 2026-07-05 — WRONG GAME.** Kruz meant a trading-card SIM game, not Balatro. Confirmed 2026-07-06 (gl-0096): the game is **TCG Card Shop Simulator** (145.5h, `user_steam_library`) — real scout at `project-docs/TCG-CARDSHOP-MOD-SCOUT.md`. Kept as reference: the Balatro stack research stands on its own if that itch ever returns. The Fleet joker pack spec built on this guess was removed.
 
 # Balatro Modding Scout Report — 2026-07-04
 
