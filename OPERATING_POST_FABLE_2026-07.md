@@ -72,6 +72,32 @@ Post-Fable operation:
 4. The next mega-review/harvest like this one.
 5. Anything Kruz tags "most ambitious" — park the ambition, keep the spec.
 
+## Final-day addendum (written hours before the window closed)
+
+New Fable-final specs that are LAW for their build lanes (build EXACTLY,
+deviations need a written reason in the repo's STATUS.md):
+
+| Spec | Lane(s) | What it is |
+|---|---|---|
+| command-tower/docs/PROVING-GROUNDS.md | gl-0192 PG-1 (after M-AI1) | AI self-play league: win matrix, embarrassment gates, determinism audit; Wakanda vs Doom pairs first. A watcher commits the doc in the next lane-free window if it has not landed yet |
+| command-tower/docs/MAGNUM-OPUS.md | opus agents (landed on master) | dual-mode ruling: scripted cards enforced, unscripted load inert + house-rule panel, logged honestly |
+| orbit/docs/LIFEBLOOD.md (0b4dafe) | gl-0201 LB-1 -> LB-4 | the visual nervous system: one event river, trust engine (panels gray, never lie), PULSE/RIVER/ATLAS/LEDGER, Spawn Bar. The honesty gates are machine-checked acceptance |
+
+Queue landscape at handoff (all approved, serializing correctly):
+Command Tower chain M2c -> M3a -> M-C1 -> M-AI1 -> COMBO-1 -> GUIDE-1 ->
+GUIDE-C1 -> wave batch 2 -> Pod Night OS (gl-0190) -> Living Meta
+(gl-0191) -> PG-1 (gl-0192) -> BREW-1 (gl-0193) -> SEASON-1 (gl-0195).
+Parallel lanes: League Day Zero (gl-0196), Herald FIRST-CLIENT (gl-0198),
+Report Counter (gl-0199, test-mode only, go-live Kruz-gated), FlipRadar
+Listing Kit (gl-0200), Orbit LB-1 (gl-0201). Shipped same-day: Shop
+Foreman (gl-0194, needs one Kruz game-launch to verify hooks), Magpie
+Diligence Room (gl-0197, `py -m magpie diligence`).
+
+First-dollar doctrine reminder for whoever reads this next: the NEAREST
+dollar remains the AATOS/Matt outdoor-crm follow-up — built, deployed,
+proposal ready, never sent. It was pitched and not picked; re-surface it
+in a morning brief.
+
 ## The week, in one line
 
 Two flagships born from two sentences ("housekeeping" -> ARTFORGE;
