@@ -26,7 +26,11 @@ The paid PC optimizer was deliberately not activated. Its public Lemon Squeezy c
 - Outbound `/go/<slug>` redirects that preserve the existing `freegames4u` tag.
 - Fail-open server-side click attribution written as `/go/click/<slug>?src=<source>` to the existing BuildKit collector.
 - `/go` and `/go/deals` now land on the owned hub instead of immediately losing the visitor to a storefront.
-- A public GambaTime YouTube About link to the hub with an explicit affiliate disclosure.
+- A GambaTime channel-description URL and explicit affiliate disclosure. This is
+  not yet a formal clickable YouTube profile link.
+- A BuildKit Play header, footer, and home-page bridge into the Deals Hub.
+- Source-tagged hub-entry receipts for `buildkit-play-nav` and
+  `buildkit-play-home`.
 - A backup of the pre-change channel description at `C:\Users\Kruz\.operator\data\gambatime_channel_description_backup_2026-07-09.json`.
 
 ## Funnel
@@ -37,7 +41,18 @@ The owned click is the leading indicator. Instant Gaming's commission ledger rem
 
 ## Measurement Contract
 
-Review once after seven full days, then weekly. Do not redesign the page from impressions alone.
+Start the experiment only after the formal YouTube profile links are live.
+Review after 14 full days, then weekly. Do not redesign the page from impressions alone.
+
+```powershell
+cd C:\Users\Kruz\Desktop\Projects\operator-scripts
+py tools\deals_funnel_report.py --start-experiment
+py tools\deals_funnel_report.py
+```
+
+`--start-experiment` freezes the current Redis counts, including launch probes,
+so only later deltas can satisfy the 50-session and 10-outbound-click gates.
+Known synthetic sources and verification slugs are excluded automatically.
 
 | Signal | Where | Decision |
 |---|---|---|
@@ -45,7 +60,7 @@ Review once after seven full days, then weekly. Do not redesign the page from im
 | `/go/click/<slug>` events | BuildKit collector | Ranks game interest and measures outbound intent |
 | Commission / sale | Instant Gaming dashboard | Confirms first dollar and actual conversion |
 
-### Seven-Day Actions
+### Fourteen-Day Actions
 
 - **10+ outbound clicks:** keep the lane live; move the top two clicked games first and add only closely related offers.
 - **1-9 outbound clicks:** improve placement in future GambaTime descriptions and pin the hub on relevant uploads; do not add more catalog complexity yet.
@@ -64,7 +79,7 @@ Review once after seven full days, then weekly. Do not redesign the page from im
 
 ## Verification Receipt
 
-- `npm run test:deals`: 4 tests passed.
+- `npm run test:deals`: 5 tests passed.
 - `npx tsc --noEmit`: passed.
 - `npm run build`: passed.
 - Production `https://buildkit.store/deals`: HTTP 200, canonical present, disclosure present, eight offer links present.
@@ -72,8 +87,19 @@ Review once after seven full days, then weekly. Do not redesign the page from im
 - Production game redirect: HTTP 302 to Instant Gaming with `igr=freegames4u`.
 - Official Steam image assets: all nine requested images returned HTTP 200.
 - BuildKit collector synthetic event: HTTP 200 with `{\"ok\":true}`.
-- Public GambaTime About page: HTTP 200 and contains both the hub URL and affiliate disclosure.
+- Public GambaTime page: HTTP 200 and the channel description contains the hub
+  URL and affiliate disclosure; formal profile links remain unset.
+- BuildKit Play revenue bridge: production HTML contains the header/footer link
+  and home promotion; `/go/deals?src=buildkit-play-home` preserves attribution.
+- `py tools\deals_funnel_report.py`: live Redis report works; 4 focused tests pass.
+- Pre-baseline observation: 1 hub visit, 11 non-synthetic outbound receipts, and
+  6 synthetic receipts excluded. These are historical observations, not proof
+  results, because the formal profile-link baseline has not started.
 
 ## Next Attention
 
-The highest-leverage next move is distribution, not another product build. After the seven-day baseline, stamp the hub entry point onto the five GambaTime uploads with the strongest purchase intent, preserving per-video identifiers where available. The first iteration should be driven by clicked games and network commissions, not a larger catalog.
+The highest-leverage next move is distribution, not another product build. Add
+formal channel profile link #1 as `Game Deals` pointing to
+`https://buildkit.store/go/deals?src=youtube-profile`, add profile link #2 as
+`BuildKit Play`, then run `--start-experiment`. The next iteration should be
+driven by post-baseline clicked games and network commissions, not a larger catalog.
