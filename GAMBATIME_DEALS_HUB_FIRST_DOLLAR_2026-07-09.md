@@ -54,6 +54,12 @@ py tools\deals_funnel_report.py
 so only later deltas can satisfy the 50-session and 10-outbound-click gates.
 Known synthetic sources and verification slugs are excluded automatically.
 
+`BuildKitDealsFunnelDaily` runs hidden at 09:05 America/Chicago and refreshes:
+
+- `C:\Users\Kruz\.operator\data\deals_funnel_latest.json`
+- `C:\Users\Kruz\.operator\data\deals_funnel_latest.txt`
+- `C:\Users\Kruz\.operator\data\deals_funnel.log`
+
 | Signal | Where | Decision |
 |---|---|---|
 | `/deals` pageviews | BuildKit collector | Confirms the channel link is being used |
@@ -91,7 +97,9 @@ Known synthetic sources and verification slugs are excluded automatically.
   URL and affiliate disclosure; formal profile links remain unset.
 - BuildKit Play revenue bridge: production HTML contains the header/footer link
   and home promotion; `/go/deals?src=buildkit-play-home` preserves attribution.
-- `py tools\deals_funnel_report.py`: live Redis report works; 4 focused tests pass.
+- `py tools\deals_funnel_report.py`: live Redis report works; 5 focused tests pass.
+- `BuildKitDealsFunnelDaily`: registered hidden for 09:05; manual task proof
+  completed with `LastTaskResult: 0` and refreshed both durable receipts.
 - Pre-baseline observation: 1 hub visit, 11 non-synthetic outbound receipts, and
   6 synthetic receipts excluded. These are historical observations, not proof
   results, because the formal profile-link baseline has not started.
