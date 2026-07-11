@@ -99,6 +99,23 @@ and the base gameplay was not always story-specific. GambaTime should borrow the
 specificity, pace, owned footage, and evidence timing while keeping its stronger
 verification and rights gates.
 
+### Topic signal inside PatchedOut
+
+The channel's own range shows that edit style is not sufficient. Current public
+leaders included `93 Players Paid the Price for One CEO's Abuse` at about 3.8M
+views, `GTA6 Stuck At 30 FPS?` at 1.7M, the Bungie 220-employees/$2.4M-cars story
+at 1.4M, `Overwatch Punishes You For Being Too Good` at 1.2M, and a Rust
+developer-safety story at 1.1M. The common package is a focused community plus a
+specific harm, restriction, number, or accountable decision-maker.
+
+The low end included a Rocket League training-tool story at 5.5K, Rockstar
+alien trivia at 10K, an Animal Crossing secret at 18K, and Notch-house trivia at
+19K. Even an almost identical title formula is not portable by itself:
+`League Of Legends Punishes You For Being Too Good` had about 28K while the
+Overwatch version had 1.2M. Public views do not establish causality or equal
+video age, but they do reject a copy-the-title strategy. Story stakes,
+community fit, timing, and evidence still choose the winner.
+
 ## Other craft findings
 
 ### jacobweeby
