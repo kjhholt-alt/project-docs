@@ -164,6 +164,9 @@ CTA.
 
 ## Seven-day proof
 
+- `GambaTimeDailyProduce` is still scheduled for `2026-07-11 08:45` on the
+  current static renderer. Ship ProofCut before that run or temporarily hold the
+  producer; do not let another static canary enter the public queue.
 - Publish at most **one verified Short per day**. Quality and distinctiveness
   beat another volume wave.
 - Favor player-impact news, guides, comparisons, and factual buyer context.
