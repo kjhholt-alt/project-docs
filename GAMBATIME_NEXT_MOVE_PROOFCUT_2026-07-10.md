@@ -93,12 +93,14 @@ probes were not consistently tagged as synthetic. Do not treat the current
 2. **Reuse the winner renderer.** Feed GambaTime's exact neural word timings into
    `clipforge.production.assemble`, with Kruz-owned footage first and strict
    official-publisher footage second. Select cached footage by premise/title
-   relevance and recency, not the current date hash; the first local proof
-   exposed the hash choosing an older Feybreak trailer despite the exact 1.0
-   trailer being available. Keep b-roll audio unmapped.
+   relevance, release-stage match, and recency, not the current date hash; the
+   first local proof exposed the hash choosing an older Feybreak trailer despite
+   the exact 1.0 trailer being available. Keep b-roll audio unmapped.
 3. **Keep the verified-news brand.** Preserve verdict, source outlets, premise
    identity, collision-safe edition IDs, Discord veto, resumable upload, public
-   receipt, and affiliate disclosure.
+   receipt, and affiliate disclosure. Generate every spoken or visual source
+   label from the canonical approved `sources` bundle after verification and
+   fail closed when a rendered outlet name diverges from that bundle.
 4. **Protect the first ten seconds.** Run hook directly into verified player
    impact. Move generic subscription copy after the payoff or omit it; never
    interrupt the opening story with a channel pitch.
