@@ -94,7 +94,9 @@ probes were not consistently tagged as synthetic. Do not treat the current
 
 1. **Correct the grader first.** Persist raw `views` and `engaged_views`; use
    engaged views for subscriber conversion, retention, and creative ranking.
-   Keep raw views as the reach metric.
+   Keep raw views as the reach metric. Label channel-level totals separately
+   from the attributable current-public-video cohort; deleted/private history
+   means those scopes do not reconcile exactly and must not be silently mixed.
 2. **Reuse the winner renderer.** Feed GambaTime's exact neural word timings into
    `clipforge.production.assemble`, with Kruz-owned footage first and strict
    official-publisher footage second. Select cached footage by premise/title
