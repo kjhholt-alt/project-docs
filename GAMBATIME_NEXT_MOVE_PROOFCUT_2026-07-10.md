@@ -46,6 +46,11 @@ that still needs distribution.
 - The same proof exposed a script-structure issue: a generic subscription pitch
   interrupts the story about five seconds in, before the player-impact payoff.
   ProofCut should fix the creative sequence as well as the visuals.
+- The channel's earlier retention read found hooks holding about **98% through
+  the first three seconds**, followed by the real loss at the hook-to-body
+  handoff. Its measured prescription was to deliver the concrete payoff in the
+  first beat. The new renderer contradicts that prescription by putting the ask
+  at the handoff and deliberately holding the payoff until afterward.
 - The $29 PC Deep-Dive Report is technically ready but recorded only **two
   pageviews in the last 30 days**. Enabling checkout now would create inventory,
   not demand.
@@ -101,9 +106,10 @@ probes were not consistently tagged as synthetic. Do not treat the current
    receipt, and affiliate disclosure. Generate every spoken or visual source
    label from the canonical approved `sources` bundle after verification and
    fail closed when a rendered outlet name diverges from that bundle.
-4. **Protect the first ten seconds.** Run hook directly into verified player
-   impact. Move generic subscription copy after the payoff or omit it; never
-   interrupt the opening story with a channel pitch.
+4. **Protect the first ten seconds.** Run hook directly into a concrete,
+   verified player-impact payoff, then supporting detail. Use at most one CTA,
+   after value: either a channel-growth ask or a `Game Deals on our profile`
+   commerce cue based on story intent. Never interrupt the opening with a pitch.
 5. **Add a visual preflight.** Known-game stories must use story-specific safe
    footage, carry source video ID/title/channel plus attribution, and clear at
    least **20% motion frames** at two samples/second with scene threshold
@@ -111,8 +117,9 @@ probes were not consistently tagged as synthetic. Do not treat the current
 6. **Generate a contact sheet.** Include six sampled frames, footage provenance,
    motion score, LUFS, and true peak in the Discord veto receipt.
 7. **Create an honest commerce handoff.** On affiliate-eligible/player-impact
-   stories, use a restrained final cue: `Game Deals on our profile`. Do not claim
-   a discount or lowest price without current storefront evidence.
+   stories, make the one post-payoff CTA a restrained `Game Deals on our profile`
+   cue. Do not also ask for a subscription, and do not claim a discount or lowest
+   price without current storefront evidence.
 8. **Repair measurement.** Tag every automated redirect check with a `*-probe`
    source, archive the contaminated baseline, and rebaseline once without
    changing either public profile link or the Deals Hub surface.
