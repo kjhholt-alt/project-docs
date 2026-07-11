@@ -17,9 +17,9 @@ The current constraint is not distribution infrastructure. GambaTime already
 has 78,327 public channel views, working OAuth/publishing, verified-source gates,
 retention analytics, footage tooling, and a live Deals Hub. The constraint is
 that the public channel looks like a content factory rather than an authored
-gaming desk: 228 uploads in 32 days, a median six uploads per active day, a
-30-upload peak day, repeated title templates, anonymous TTS, and little visible
-evidence or editorial identity.
+gaming desk: 227 unique public videos across 32 active UTC dates, a median six
+uploads per active date, a 26-upload peak date, repeated title templates,
+anonymous TTS, and little visible evidence or editorial identity.
 
 The correct strategy is **factory to newsroom**, not more automation and not a
 new channel yet.
@@ -32,6 +32,12 @@ classified from duration/title. Eight representative videos were downloaded at
 low resolution for local study only. Contact sheets, transcripts, motion, edit
 density, title structure, channel descriptions, upload cadence, and public
 engagement were compared.
+
+GambaTime's paginated uploads playlist returned repeated video IDs during the
+cleanup pass. Library totals therefore use 227 unique IDs enumerated from the
+public `/shorts` and `/videos` tabs, then enriched through the authenticated
+Data and Analytics APIs. Missing Analytics rows are never interpreted as zero
+subscriber attribution.
 
 Public data cannot reveal competitor retention, engaged views, revenue, or
 private traffic sources. Median public views and likes are therefore comparison
@@ -144,19 +150,20 @@ host reaction and extracts a complete opinion rather than summarizing news.
 
 ## GambaTime public-surface audit
 
-- **228 videos** were published from June 10 through July 11 across 32 active
-  days.
-- Median uploads per active day: **6**. Maximum: **30**. Nineteen days had five
-  or more uploads.
-- At least **104 videos** use a repeated generic family such as `Top 5`, `Devs
+- **227 unique public videos** were published from June 10 through July 11 UTC
+  across 32 active dates: 200 Shorts and 27 long-form videos.
+- Median uploads per active date: **6**. Maximum: **26**. Nineteen dates had
+  five or more uploads.
+- At least **106 videos** use a repeated generic family such as `Top 5`, `Devs
   Did WHAT?`, `How To Actually Win`, `Trick Pros Don't Want You To Know`, generic
   builds, reactions, rankings, or versus titles.
-- Those 104 videos produced about **39,894 views**, **423 likes**, and a
-  **293-view median**.
-- There are **26 exact duplicate-title groups covering 59 videos**.
-- A conservative reversible-cleanup cohort contains **60 generic videos** with
-  zero attributed subscribers and fewer than 500 views. Together they hold only
-  9,850 views and have a 126-view median.
+- Those 106 videos produced about **40,207 views**, **413 likes**, and a
+  **294-view median** at the corrected snapshot.
+- There are **18 exact duplicate-title groups covering 41 distinct videos**.
+- A conservative reversible-cleanup cohort contains **45 generic videos** with
+  fewer than 500 views, an available Analytics row confirming zero attributed
+  subscribers, and at least 72 hours of age. Together they hold only 6,413
+  views and have a 114-view median.
 - Public comment rate is contaminated by the channel's own automated pinned
   comment and should not be used as a creative success metric.
 
@@ -182,6 +189,10 @@ Prepare a reversible unlist manifest, never a delete sweep:
 Do not mutate public visibility without Kruz approval. Re-evaluate a new channel
 only after ten EvidenceCut releases if audience-quality metrics improve sharply
 but distribution remains suppressed.
+
+The corrected review-only manifest is stored at
+`C:\Users\Kruz\.operator\data\gambatime_cleanup_review_2026-07-11`. It grants
+no visibility, metadata, upload, or deletion authority.
 
 ## The format: GambaTime EvidenceCut
 

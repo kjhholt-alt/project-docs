@@ -192,10 +192,12 @@ funnel are assets worth preserving.
 ## Cleanup lane
 
 Separately prepare a reversible visibility manifest for exact duplicate uploads,
-unsupported stories, and generic zero-subscriber videos below 500 views. The
-manifest must identify a retained copy and total views at risk. It is a review
-artifact only: no deletion, unlisting, or bulk title changes are part of the
-creative pilot.
+unsupported stories, and generic videos below 500 views. A zero-subscriber
+candidate requires an available Analytics row confirming the attribution and at
+least 72 hours of age; missing Analytics data never means zero. The manifest
+must identify a retained copy and total views at risk. It is a review artifact
+only: no deletion, unlisting, or bulk title changes are part of the creative
+pilot.
 
 ## Implementation order
 
