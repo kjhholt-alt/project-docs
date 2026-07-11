@@ -38,10 +38,11 @@ that still needs distribution.
 - The repaired Palworld canary produced only **2 meaningful-motion frames in 59
   samples (3.4%)**. Three historical winners produced **53.3%-81.7%**. They use
   game footage and word-timed captions; the canary uses neither.
-- A safe local ProofCut of the exact Palworld script, using the existing official
-  Pocketpair trailer and existing karaoke renderer, produced **47/58 motion
-  frames (81.0%)**, 1080x1920, 29.45 seconds, -15.84 LUFS, and -1.47 dBTP.
-  Artifact: `C:\Users\Kruz\.operator\data\gambatime_proofcut_v2\clip.mp4`.
+- A safe local ProofCut of the exact Palworld script, using Pocketpair's exact
+  official **Palworld 1.0 Cinematic Trailer** and the existing karaoke renderer,
+  produced **47/58 motion frames (81.0%)**, 1080x1920, 29.45 seconds, -15.84
+  LUFS, and -1.47 dBTP. Black, freeze, and silence scans were clean. Artifact:
+  `C:\Users\Kruz\.operator\data\gambatime_proofcut_v3\clip.mp4`.
 - The $29 PC Deep-Dive Report is technically ready but recorded only **two
   pageviews in the last 30 days**. Enabling checkout now would create inventory,
   not demand.
@@ -74,14 +75,17 @@ probes were not consistently tagged as synthetic. Do not treat the current
    Keep raw views as the reach metric.
 2. **Reuse the winner renderer.** Feed GambaTime's exact neural word timings into
    `clipforge.production.assemble`, with Kruz-owned footage first and strict
-   official-publisher footage second. Keep b-roll audio unmapped.
+   official-publisher footage second. Select cached footage by premise/title
+   relevance and recency, not the current date hash; the first local proof
+   exposed the hash choosing an older Feybreak trailer despite the exact 1.0
+   trailer being available. Keep b-roll audio unmapped.
 3. **Keep the verified-news brand.** Preserve verdict, source outlets, premise
    identity, collision-safe edition IDs, Discord veto, resumable upload, public
    receipt, and affiliate disclosure.
 4. **Add a visual preflight.** Known-game stories must use story-specific safe
-   footage, carry attribution, and clear at least **20% motion frames** at two
-   samples/second with scene threshold `0.03`. Gradient/default footage cannot
-   satisfy the live gate.
+   footage, carry source video ID/title/channel plus attribution, and clear at
+   least **20% motion frames** at two samples/second with scene threshold
+   `0.03`. Gradient/default footage cannot satisfy the live gate.
 5. **Generate a contact sheet.** Include six sampled frames, footage provenance,
    motion score, LUFS, and true peak in the Discord veto receipt.
 6. **Create an honest commerce handoff.** On affiliate-eligible/player-impact
