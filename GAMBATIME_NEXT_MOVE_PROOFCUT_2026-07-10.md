@@ -43,12 +43,29 @@ that still needs distribution.
   produced **47/58 motion frames (81.0%)**, 1080x1920, 29.45 seconds, -15.84
   LUFS, and -1.47 dBTP. Black, freeze, and silence scans were clean. Artifact:
   `C:\Users\Kruz\.operator\data\gambatime_proofcut_v3\clip.mp4`.
+- The same proof exposed a script-structure issue: a generic subscription pitch
+  interrupts the story about five seconds in, before the player-impact payoff.
+  ProofCut should fix the creative sequence as well as the visuals.
 - The $29 PC Deep-Dive Report is technically ready but recorded only **two
   pageviews in the last 30 days**. Enabling checkout now would create inventory,
   not demand.
 - Herald has the highest ticket, but its live cron has failed since May 31 and
   its lead list is exhausted. The RAM listing can create cash, but it is asset
   conversion rather than repeatable product revenue.
+
+## Weighted decision matrix
+
+Scores are 1-5. The weighted total favors existing distribution (30%), then
+revenue proximity (25%), autonomous control (15%), time to proof (15%), and
+repeatable compounding (15%).
+
+| Candidate | Distribution | Revenue | Control | Proof speed | Compounding | Weighted |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| GambaTime ProofCut | 5 | 4 | 5 | 5 | 5 | **4.75** |
+| Herald repair | 2 | 5 | 2 | 2 | 4 | 3.05 |
+| PC Deep-Dive launch | 1 | 3 | 5 | 4 | 5 | 3.00 |
+| RAM sale | 3 | 5 | 1 | 4 | 1 | 2.90 |
+| Start another project | 1 | 1 | 5 | 2 | 4 | 2.35 |
 
 ## The funnel correction
 
@@ -82,16 +99,19 @@ probes were not consistently tagged as synthetic. Do not treat the current
 3. **Keep the verified-news brand.** Preserve verdict, source outlets, premise
    identity, collision-safe edition IDs, Discord veto, resumable upload, public
    receipt, and affiliate disclosure.
-4. **Add a visual preflight.** Known-game stories must use story-specific safe
+4. **Protect the first ten seconds.** Run hook directly into verified player
+   impact. Move generic subscription copy after the payoff or omit it; never
+   interrupt the opening story with a channel pitch.
+5. **Add a visual preflight.** Known-game stories must use story-specific safe
    footage, carry source video ID/title/channel plus attribution, and clear at
    least **20% motion frames** at two samples/second with scene threshold
    `0.03`. Gradient/default footage cannot satisfy the live gate.
-5. **Generate a contact sheet.** Include six sampled frames, footage provenance,
+6. **Generate a contact sheet.** Include six sampled frames, footage provenance,
    motion score, LUFS, and true peak in the Discord veto receipt.
-6. **Create an honest commerce handoff.** On affiliate-eligible/player-impact
+7. **Create an honest commerce handoff.** On affiliate-eligible/player-impact
    stories, use a restrained final cue: `Game Deals on our profile`. Do not claim
    a discount or lowest price without current storefront evidence.
-7. **Repair measurement.** Tag every automated redirect check with a `*-probe`
+8. **Repair measurement.** Tag every automated redirect check with a `*-probe`
    source, archive the contaminated baseline, and rebaseline once without
    changing either public profile link or the Deals Hub surface.
 
