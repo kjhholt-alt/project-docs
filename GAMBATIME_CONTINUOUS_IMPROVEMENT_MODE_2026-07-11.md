@@ -88,3 +88,38 @@ Add EvidenceCut as a shadow renderer behind the running producer, using the
 existing consistent voice first. Promote it to 25% only after its local manifest
 and QC receipt pass. Continue current production throughout the build and while
 the first treatment cohort ages.
+
+## High-frequency Shorts deployment
+
+Shipped and activated on 2026-07-11:
+
+- `GambaTimeShortsProduce` runs at 03:15, 07:15, 11:15, 15:15, 19:15, and
+  23:15 local time.
+- `GambaTimeDailyProduce` remains as the 08:45 offset anchor.
+- Both launchers call the explicit `auto-short --arm --skip-if-active` path;
+  neither automatic path invokes long-form.
+- Automatic Shorts use a one-hour Discord veto window. The hourly publisher
+  normally clears the active edition before the next four-hour slot.
+- No verified story and an already-active edition are healthy skips. Source,
+  draft, render, QC, runtime lease, and publish failures remain nonzero and page.
+- The publisher cap is eight videos/day, above the six scheduled Short slots and
+  below the system's broader revised API-quota capacity.
+- `YouTubeSystemHealth` and task-scheduler monitoring both treat the frequent
+  producer as canonical.
+
+Deployment commits: operator-suite `b221faa`, `135d783`, and `388635f`;
+operator-scripts `c35fdcb` and `9a2a269`.
+
+Live proof:
+
+- Existing Mortal Shell 2 edition cleared the revised rolling policy through
+  the normal veto/preflight/publisher path and produced verified public receipt
+  `EJQHHtbjBAs`.
+- The first manual frequent run completed in 123 seconds: 40 current topics,
+  14 ranked candidates, four confirmed stories, judge 100, clean render/QC, and
+  Discord receipt. It queued the verified EA College Football 27 paid-progression
+  reversal as edition
+  `gt_20260711T152402211004_ea-confirms-plan_short_43397a` for the hourly pump.
+- Online system health finished with zero issues and recognized the frequent
+  task, active edition, and latest public receipt.
+- Verification: 378 Clipforge tests and 13 task-watcher tests passed.
