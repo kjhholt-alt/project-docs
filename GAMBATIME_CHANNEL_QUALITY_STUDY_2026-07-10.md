@@ -234,6 +234,13 @@ arbitrary narration file, the karaoke renderer already exists, and
 `faster-whisper` is installed. A narration drop can therefore be transcribed
 with word timestamps and passed through the existing visual/QC system.
 
+The word-timing path was exercised locally against the 29.45-second ProofCut:
+the cached base model produced 74 timed tokens in 8.06 seconds on CPU with no
+hosted API. Raw ASR cannot become caption truth, however. It normalized proper
+names such as `Palworld` and `GambaTime` into separate words. EvidenceCut must
+align timestamps back to the approved canonical script, emit a transcript diff,
+and block unresolved number or proper-noun changes before rendering captions.
+
 ## Three-video proof
 
 1. Hold `GambaTimeDailyProduce` until EvidenceCut is ready.

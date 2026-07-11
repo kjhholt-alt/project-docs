@@ -51,13 +51,14 @@
     "narration": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind", "path", "sha256", "transcript", "word_timestamps_path", "speaker_consent"],
+      "required": ["kind", "path", "sha256", "raw_asr_transcript", "word_timestamps_path", "alignment_report_path", "speaker_consent"],
       "properties": {
         "kind": {"const": "human"},
         "path": {"type": "string", "minLength": 1},
         "sha256": {"$ref": "#/$defs/sha256"},
-        "transcript": {"type": "string", "minLength": 250, "maxLength": 1100},
+        "raw_asr_transcript": {"type": "string", "minLength": 250, "maxLength": 1100},
         "word_timestamps_path": {"type": "string", "minLength": 1},
+        "alignment_report_path": {"type": "string", "minLength": 1},
         "speaker_consent": {"const": true}
       }
     },
@@ -109,12 +110,13 @@
     "qc": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["black_scan", "freeze_scan", "silence_scan", "caption_alignment", "source_render_parity", "rights_verified", "audio_lufs", "true_peak_dbtp", "passed"],
+      "required": ["black_scan", "freeze_scan", "silence_scan", "caption_alignment", "canonical_script_alignment", "source_render_parity", "rights_verified", "audio_lufs", "true_peak_dbtp", "passed"],
       "properties": {
         "black_scan": {"const": "pass"},
         "freeze_scan": {"const": "pass"},
         "silence_scan": {"const": "pass"},
         "caption_alignment": {"const": "pass"},
+        "canonical_script_alignment": {"const": "pass"},
         "source_render_parity": {"const": "pass"},
         "rights_verified": {"const": true},
         "audio_lufs": {"type": "number"},

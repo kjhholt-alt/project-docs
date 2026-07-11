@@ -111,6 +111,11 @@ The pipeline owns cleanup, loudness normalization, transcription, word
 alignment, captions, and final audio QC. It must never synthesize missing words
 in Kruz's voice or imitate another creator.
 
+The approved script remains the caption and factual source of truth. ASR supplies
+timing evidence only: align its tokens back to the canonical script, save a
+readable diff, and block unresolved additions, omissions, numbers, dates, or
+proper-name substitutions. Never render raw ASR text directly.
+
 ## Evidence cue sheet
 
 Every material spoken claim maps to a saved visual receipt. Evidence is shown
@@ -137,6 +142,8 @@ The local render passes only when all checks pass:
   delivery bounds;
 - word captions match the human recording and never cover source identity or
   the decisive text in an evidence crop;
+- canonical-script alignment passes, with every changed number, date, and
+  proper name explicitly resolved;
 - three to six evidence cues appear at their intended spoken claims;
 - background footage audio is absent;
 - footage provenance, rights basis, source URLs, script hash, narration hash,

@@ -39,8 +39,9 @@
     "kind": "human",
     "path": "local/narration/example-only-20260711-001.wav",
     "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
-    "transcript": "EXAMPLE ONLY. A verified decision now changes one specific part of the game for a defined group of players. The publisher's dated statement provides the primary receipt, and a separate report confirms the relevant context. That second source does not replace the receipt; it tests whether the surrounding interpretation is fair and complete. The important detail is not that people are upset. It is that the documented rule, price, or feature now works differently for the people named in the story. That makes the consequence concrete and testable. GambaTime verdict: the available evidence supports this narrow conclusion, while anything beyond it remains unconfirmed.",
+    "raw_asr_transcript": "EXAMPLE ONLY. A verified decision now changes one specific part of the game for a defined group of players. The publisher's dated statement provides the primary receipt, and a separate report confirms the relevant context. That second source does not replace the receipt; it tests whether the surrounding interpretation is fair and complete. The important detail is not that people are upset. It is that the documented rule, price, or feature now works differently for the people named in the story. That makes the consequence concrete and testable. GambaTime verdict: the available evidence supports this narrow conclusion, while anything beyond it remains unconfirmed.",
     "word_timestamps_path": "local/narration/example-only-20260711-001.words.json",
+    "alignment_report_path": "local/narration/example-only-20260711-001.alignment.json",
     "speaker_consent": true
   },
   "background": {
@@ -95,6 +96,7 @@
     "freeze_scan": "pass",
     "silence_scan": "pass",
     "caption_alignment": "pass",
+    "canonical_script_alignment": "pass",
     "source_render_parity": "pass",
     "rights_verified": true,
     "audio_lufs": -15.7,
