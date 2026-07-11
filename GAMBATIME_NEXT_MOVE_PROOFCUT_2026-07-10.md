@@ -124,6 +124,36 @@ probes were not consistently tagged as synthetic. Do not treat the current
    source, archive the contaminated baseline, and rebaseline once without
    changing either public profile link or the Deals Hub surface.
 
+## Bounded implementation surface
+
+- `gambatime/draft.py`, `short_render.py`, and `qc.py`: hook-to-payoff structure,
+  one post-value CTA, retained word timings, and the proven karaoke assembly.
+- `gambatime/run.py` plus `clipforge.production.footage/assemble`: choose the
+  most premise-relevant safe visual and persist its source identity.
+- `gambatime/preflight.py` and `veto.py`: fail closed on visual/source mismatch;
+  expose contact sheet, motion score, provenance, loudness, and peak in review.
+- `clipforge.analytics`, `publish/youtube_up.py`, `gambatime/learn.py`, and
+  `scripts/pull_conversion.py`: preserve raw starts while making engaged views
+  the creative/subscriber conversion denominator.
+- `operator-scripts/tools/deals_funnel_report.py` and all redirect probes: give
+  probes explicit `*-probe` sources, archive the contaminated baseline, and
+  start one clean measurement window.
+
+Acceptance requires focused tests for caption-offset preservation, story-to-
+footage selection, source-render parity, silent b-roll, visual-QC failure,
+raw-versus-engaged math, and probe exclusion; then the full Clipforge suite,
+one local/private render, contact-sheet inspection, and a dry publish preflight.
+No public upload is part of the implementation test.
+
+## Proof-run story selector
+
+Stories must first clear confirmation, source, footage, and freshness gates.
+Among eligible stories, rank concrete player impact first, then historical
+engaged-view conversion, then exact Deals Hub eligibility. Commerce eligibility
+is a tie-breaker, never permission to manufacture a story. Use the commerce CTA
+only when the exact offer is live; otherwise use a post-payoff growth CTA or no
+CTA.
+
 ## Seven-day proof
 
 - Publish at most **one verified Short per day**. Quality and distinctiveness
