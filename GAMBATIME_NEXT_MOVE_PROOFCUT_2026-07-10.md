@@ -46,6 +46,9 @@ that still needs distribution.
 - The same proof exposed a script-structure issue: a generic subscription pitch
   interrupts the story about five seconds in, before the player-impact payoff.
   ProofCut should fix the creative sequence as well as the visuals.
+- Pocketpair's current July 2 video guidelines broadly permit monetized video
+  posts of its games, subject to restrictions. That is a Palworld-specific
+  rights basis, not a reusable assumption about every publisher.
 - The channel's earlier retention read found hooks holding about **98% through
   the first three seconds**, followed by the real loss at the hook-to-body
   handoff. Its measured prescription was to deliver the concrete payoff in the
@@ -102,7 +105,10 @@ probes were not consistently tagged as synthetic. Do not treat the current
    official-publisher footage second. Select cached footage by premise/title
    relevance, release-stage match, and recency, not the current date hash; the
    first local proof exposed the hash choosing an older Feybreak trailer despite
-   the exact 1.0 trailer being available. Keep b-roll audio unmapped.
+   the exact 1.0 trailer being available. Keep b-roll audio unmapped. Persist a
+   dated `rights_basis` (`owned_capture`, publisher policy, or explicit license)
+   with its URL/receipt; attribution alone is not permission, and an unknown
+   basis blocks public use.
 3. **Keep the verified-news brand.** Preserve verdict, source outlets, premise
    identity, collision-safe edition IDs, Discord veto, resumable upload, public
    receipt, and affiliate disclosure. Generate every spoken or visual source
@@ -193,6 +199,11 @@ Kruz-only Studio action because the Data API exposes no writable field.
 - YouTube's inauthentic-content policy explicitly flags mass-produced generic
   templates and rewards materially varied, original content:
   <https://support.google.com/youtube/answer/1311392>
+- YouTube says attribution alone does not establish fair use and that copyright
+  remains separate from reused-content eligibility:
+  <https://support.google.com/youtube/answer/9783148>
+- Pocketpair's current gameplay/video policy permits monetized posts subject to
+  its restrictions: <https://www.pocketpair.jp/en/guidelines-video-en/>
 
 ## Decisive next command
 
