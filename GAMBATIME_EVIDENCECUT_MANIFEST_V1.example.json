@@ -1,0 +1,108 @@
+{
+  "schema_version": "gambatime.evidencecut.v1",
+  "edition_id": "example-only-20260711-001",
+  "story": {
+    "title": "Example Only: A Verified Change Now Affects Players",
+    "claim": "This synthetic example shows where one exact, source-supported claim belongs.",
+    "player_impact": "This field states the concrete effect on a specific group of players without inventing urgency.",
+    "verdict": "GambaTime verdict: the evidence supports a narrow conclusion.",
+    "script": "EXAMPLE ONLY. A verified decision now changes one specific part of the game for a defined group of players. The publisher's dated statement provides the primary receipt, and a separate report confirms the relevant context. That second source does not replace the receipt; it tests whether the surrounding interpretation is fair and complete. The important detail is not that people are upset. It is that the documented rule, price, or feature now works differently for the people named in the story. That makes the consequence concrete and testable. GambaTime verdict: the available evidence supports this narrow conclusion, while anything beyond it remains unconfirmed.",
+    "script_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "sources": [
+    {
+      "source_id": "primary-1",
+      "role": "primary",
+      "publisher": "Example Publisher",
+      "title": "Example First-Party Statement",
+      "url": "https://example.invalid/primary",
+      "published_at": "2026-07-10T15:00:00Z",
+      "retrieved_at": "2026-07-11T04:45:00Z",
+      "supports": [
+        "The synthetic decision and its stated effective date"
+      ]
+    },
+    {
+      "source_id": "corroboration-1",
+      "role": "corroboration",
+      "publisher": "Example Reporter",
+      "title": "Example Independent Context",
+      "url": "https://example.invalid/corroboration",
+      "published_at": "2026-07-10T17:00:00Z",
+      "retrieved_at": "2026-07-11T04:46:00Z",
+      "supports": [
+        "The synthetic scope and affected player group"
+      ]
+    }
+  ],
+  "narration": {
+    "kind": "human",
+    "path": "local/narration/example-only-20260711-001.wav",
+    "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "transcript": "EXAMPLE ONLY. A verified decision now changes one specific part of the game for a defined group of players. The publisher's dated statement provides the primary receipt, and a separate report confirms the relevant context. That second source does not replace the receipt; it tests whether the surrounding interpretation is fair and complete. The important detail is not that people are upset. It is that the documented rule, price, or feature now works differently for the people named in the story. That makes the consequence concrete and testable. GambaTime verdict: the available evidence supports this narrow conclusion, while anything beyond it remains unconfirmed.",
+    "word_timestamps_path": "local/narration/example-only-20260711-001.words.json",
+    "speaker_consent": true
+  },
+  "background": {
+    "path": "local/background/example-owned-capture.mp4",
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "rights_basis": "owned_capture",
+    "rights_receipt": "local/rights/example-owned-capture.receipt.json",
+    "audio_mapped": false
+  },
+  "evidence_cues": [
+    {
+      "cue_id": "E1",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "asset_path": "local/evidence/example-identity.png",
+      "asset_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "source_id": "primary-1",
+      "claim_text": "A verified decision changes a specific part of the game",
+      "display_label": "EXAMPLE ONLY"
+    },
+    {
+      "cue_id": "E2",
+      "start_sec": 3.0,
+      "end_sec": 10.0,
+      "asset_path": "local/evidence/example-primary-receipt.png",
+      "asset_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "source_id": "primary-1",
+      "claim_text": "The dated statement is the primary receipt",
+      "display_label": "Example Publisher - Jul 10, 2026"
+    },
+    {
+      "cue_id": "E4",
+      "start_sec": 10.0,
+      "end_sec": 25.0,
+      "asset_path": "local/evidence/example-player-impact.png",
+      "asset_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "source_id": "corroboration-1",
+      "claim_text": "The documented change affects the named player group",
+      "display_label": "Synthetic player-impact example"
+    }
+  ],
+  "render": {
+    "path": "local/render/example-only-20260711-001.mp4",
+    "sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+    "width": 1080,
+    "height": 1920,
+    "duration_sec": 34.2,
+    "contact_sheet_path": "local/render/example-only-20260711-001-contact-sheet.jpg"
+  },
+  "qc": {
+    "black_scan": "pass",
+    "freeze_scan": "pass",
+    "silence_scan": "pass",
+    "caption_alignment": "pass",
+    "source_render_parity": "pass",
+    "rights_verified": true,
+    "audio_lufs": -15.7,
+    "true_peak_dbtp": -1.4,
+    "passed": true
+  },
+  "approval": {
+    "local_review_complete": false,
+    "public_publish_authorized": false
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gambatime.local/schemas/evidencecut-manifest-v1.schema.json",
+  "title": "GambaTime EvidenceCut Manifest v1",
+  "description": "Fail-closed source, rights, narration, evidence-cue, and QC receipt for a GambaTime EvidenceCut render.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "edition_id",
+    "story",
+    "sources",
+    "narration",
+    "background",
+    "evidence_cues",
+    "render",
+    "qc",
+    "approval"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "gambatime.evidencecut.v1"
+    },
+    "edition_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{5,79}$"
+    },
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "claim", "player_impact", "verdict", "script", "script_sha256"],
+      "properties": {
+        "title": {"type": "string", "minLength": 12, "maxLength": 100},
+        "claim": {"type": "string", "minLength": 20},
+        "player_impact": {"type": "string", "minLength": 20},
+        "verdict": {"type": "string", "minLength": 12},
+        "script": {"type": "string", "minLength": 250, "maxLength": 1000},
+        "script_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/source"},
+      "contains": {
+        "type": "object",
+        "required": ["role"],
+        "properties": {"role": {"const": "primary"}}
+      }
+    },
+    "narration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "path", "sha256", "transcript", "word_timestamps_path", "speaker_consent"],
+      "properties": {
+        "kind": {"const": "human"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "transcript": {"type": "string", "minLength": 250, "maxLength": 1100},
+        "word_timestamps_path": {"type": "string", "minLength": 1},
+        "speaker_consent": {"const": true}
+      }
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "rights_basis", "rights_receipt", "audio_mapped"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "rights_basis": {"enum": ["owned_capture", "explicit_license", "publisher_policy"]},
+        "rights_receipt": {"type": "string", "minLength": 1},
+        "audio_mapped": {"const": false}
+      }
+    },
+    "evidence_cues": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cue_id", "start_sec", "end_sec", "asset_path", "asset_sha256", "source_id", "claim_text", "display_label"],
+        "properties": {
+          "cue_id": {"type": "string", "pattern": "^E[1-6]$"},
+          "start_sec": {"type": "number", "minimum": 0, "maximum": 38},
+          "end_sec": {"type": "number", "exclusiveMinimum": 0, "maximum": 38},
+          "asset_path": {"type": "string", "minLength": 1},
+          "asset_sha256": {"$ref": "#/$defs/sha256"},
+          "source_id": {"type": "string", "minLength": 1},
+          "claim_text": {"type": "string", "minLength": 8},
+          "display_label": {"type": "string", "minLength": 2, "maxLength": 80}
+        }
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "width", "height", "duration_sec", "contact_sheet_path"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "width": {"const": 1080},
+        "height": {"const": 1920},
+        "duration_sec": {"type": "number", "minimum": 28, "maximum": 38},
+        "contact_sheet_path": {"type": "string", "minLength": 1}
+      }
+    },
+    "qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["black_scan", "freeze_scan", "silence_scan", "caption_alignment", "source_render_parity", "rights_verified", "audio_lufs", "true_peak_dbtp", "passed"],
+      "properties": {
+        "black_scan": {"const": "pass"},
+        "freeze_scan": {"const": "pass"},
+        "silence_scan": {"const": "pass"},
+        "caption_alignment": {"const": "pass"},
+        "source_render_parity": {"const": "pass"},
+        "rights_verified": {"const": true},
+        "audio_lufs": {"type": "number"},
+        "true_peak_dbtp": {"type": "number", "maximum": -1.0},
+        "passed": {"const": true}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_review_complete", "public_publish_authorized"],
+      "properties": {
+        "local_review_complete": {"type": "boolean"},
+        "public_publish_authorized": {
+          "const": false,
+          "description": "A local proof manifest never grants public-publish permission."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "role", "publisher", "title", "url", "published_at", "retrieved_at", "supports"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "role": {"enum": ["primary", "corroboration"]},
+        "publisher": {"type": "string", "minLength": 2},
+        "title": {"type": "string", "minLength": 5},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "published_at": {"type": "string", "format": "date-time"},
+        "retrieved_at": {"type": "string", "format": "date-time"},
+        "supports": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 8}
+        }
+      }
+    }
+  }
+}
