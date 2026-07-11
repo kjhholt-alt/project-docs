@@ -1,8 +1,8 @@
 # GambaTime EvidenceCut Pilot Packet
 
 **Prepared:** 2026-07-10/11
-**Purpose:** Turn the channel-quality study into one controlled three-video
-experiment without resuming factory-volume publishing.
+**Purpose:** Turn the channel-quality study into a rolling three-video treatment
+while existing production and publishing continue at full cadence.
 
 ## Pilot decision
 
@@ -14,15 +14,15 @@ The pilot tests one change bundle because the current format needs a categorical
 quality reset, not a small thumbnail or title optimization. The bundle is:
 
 - one specific, verified player-impact story;
-- real human narration, with no camera requirement;
+- one consistent rights-safe production voice, with human narration optional;
 - owned or explicitly rights-cleared gameplay motion;
 - three to six claim-matched evidence inserts;
 - word-timed captions;
 - an original verdict;
 - no intro, generic subscription ask, or commerce CTA.
 
-No public upload, unlisting, metadata mutation, or scheduler change is authorized
-by this packet.
+This packet does not pause or alter the existing scheduled producer/publisher.
+It grants no cleanup, deletion, unlisting, or bulk metadata authority.
 
 ## Story admission gate
 
@@ -92,11 +92,16 @@ Script rejection conditions:
 - a spoken citation and rendered source label do not match the approved bundle;
 - any subscribe, comment, affiliate, or profile ask appears in the pilot copy.
 
-## Narration handoff
+## Narration modes
 
-Kruz's only creative-production gate is three one-take recordings, one per
-approved script. A phone or ordinary desktop microphone is sufficient for the
-pilot because consistency and human authorship matter more than studio polish.
+The automatic lane uses one consistent, rights-safe synthetic voice so narration
+never blocks throughput. Do not clone or imitate another person. Every automatic
+edition still passes canonical-script alignment, loudness, silence, and caption
+QC.
+
+Human narration is an optional tagged hero variant, not a gate. When used, a
+phone or ordinary desktop microphone is sufficient because consistency and
+human authorship matter more than studio polish.
 
 Recording contract:
 
@@ -158,9 +163,12 @@ than being waived for freshness.
 
 ## Release design
 
-Use three distinct stories but hold the format constant. Publish no more than
-one pilot every 72 hours so each receives an interpretable initial read. Do not
-publish ordinary automated Shorts between pilot releases.
+Use three distinct stories and hold the EvidenceCut treatment constant, but keep
+all ordinary production running. Tag every renderer, narration mode, topic,
+script pattern, and evidence-cue count with collision-safe experiment IDs.
+Publish treatments as soon as their existing source, rights, QC, and publish
+gates pass. A video reaching 72 hours triggers its first grade; it never blocks
+the next render or release.
 
 Measure each at 72 hours and again at seven days:
 
@@ -179,17 +187,19 @@ probe traffic with buyer behavior.
 
 ## Decision after video three
 
-**Scale EvidenceCut** when the median clears the engaged/start and likes/view
-thresholds with zero integrity failures. Keep three per week until ten releases
-establish whether the result persists.
+**Scale EvidenceCut** when the first tagged cohort clears the engaged/start and
+likes/view thresholds with zero integrity failures. Promote it from shadow mode
+to 25%, then 50%, then 100% of eligible stories as rolling cohorts confirm the
+gain. Total throughput does not decrease during rollout.
 
 **Iterate once** when retention improves materially but likes or subscribers do
 not. Review topic strength and verdict quality before changing captions or edit
 tempo.
 
-**Stop and diagnose** when engaged/start remains below 47%, any integrity gate
-fails, or the three stories cannot be distinguished from commodity news reads.
-Do not compensate with more uploads.
+**Roll back the treatment, not production** when engaged/start remains below
+47%, any integrity gate fails, or the stories cannot be distinguished from
+commodity news reads. The last verified renderer continues while the failed
+variation is diagnosed in shadow mode.
 
 Consider a new channel only after ten EvidenceCuts improve audience-quality
 signals while distribution remains consistently suppressed. Before then, the
@@ -208,12 +218,14 @@ pilot.
 
 ## Implementation order
 
-1. Add human narration ingest with word-level alignment to ProofCut.
+1. Add canonical-script alignment for both synthetic and human narration.
 2. Add timed evidence-cue overlays backed by the canonical source bundle.
-3. Emit one manifest containing source, rights, narration, cue, and QC receipts.
-4. Render a local matched proof and inspect its contact sheet.
-5. Approve three scripts, then collect the three narration takes.
-6. Run the public pilot one release at a time under the metrics above.
+3. Emit one manifest containing source, rights, narration, cue, experiment, and
+   QC receipts.
+4. Shadow-render a matched proof while current production remains live.
+5. Promote the passing treatment into 25% of eligible output, then ratchet the
+   share upward from rolling cohort evidence.
+6. Add optional human hero variants whenever narration takes are available.
 
-The next engineering artifact is the local matched EvidenceCut proof. The next
-Kruz-only artifact is a short narration take after an approved script exists.
+The next engineering artifact is the local matched EvidenceCut proof. There is
+no Kruz narration dependency for the automatic lane.

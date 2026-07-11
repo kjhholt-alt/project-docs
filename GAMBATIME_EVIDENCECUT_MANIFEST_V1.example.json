@@ -37,11 +37,13 @@
   ],
   "narration": {
     "kind": "human",
+    "voice_identity": "Kruz example take",
     "path": "local/narration/example-only-20260711-001.wav",
     "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
     "raw_asr_transcript": "EXAMPLE ONLY. A verified decision now changes one specific part of the game for a defined group of players. The publisher's dated statement provides the primary receipt, and a separate report confirms the relevant context. That second source does not replace the receipt; it tests whether the surrounding interpretation is fair and complete. The important detail is not that people are upset. It is that the documented rule, price, or feature now works differently for the people named in the story. That makes the consequence concrete and testable. GambaTime verdict: the available evidence supports this narrow conclusion, while anything beyond it remains unconfirmed.",
     "word_timestamps_path": "local/narration/example-only-20260711-001.words.json",
     "alignment_report_path": "local/narration/example-only-20260711-001.alignment.json",
+    "voice_rights_verified": true,
     "speaker_consent": true
   },
   "background": {

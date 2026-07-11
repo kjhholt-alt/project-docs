@@ -4,6 +4,12 @@
 **Decision:** Build the ProofCut creative layer before adding another product,
 catalog surface, or upload lane.
 
+**Runtime policy update - 2026-07-11:** Kruz explicitly chose maximum continuous
+video throughput. Keep the producer and publisher enabled; build ProofCut and
+EvidenceCut in shadow, then promote improvements into rolling tagged cohorts.
+This update supersedes any hold, cadence-cap, or wait-between-releases language
+below. See `GAMBATIME_CONTINUOUS_IMPROVEMENT_MODE_2026-07-11.md`.
+
 ## Executive verdict
 
 GambaTime is the portfolio's strongest distribution asset, but the new

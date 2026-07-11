@@ -51,16 +51,27 @@
     "narration": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind", "path", "sha256", "raw_asr_transcript", "word_timestamps_path", "alignment_report_path", "speaker_consent"],
+      "required": ["kind", "voice_identity", "path", "sha256", "raw_asr_transcript", "word_timestamps_path", "alignment_report_path", "voice_rights_verified"],
       "properties": {
-        "kind": {"const": "human"},
+        "kind": {"enum": ["synthetic_consistent", "human"]},
+        "voice_identity": {"type": "string", "minLength": 2, "maxLength": 80},
         "path": {"type": "string", "minLength": 1},
         "sha256": {"$ref": "#/$defs/sha256"},
         "raw_asr_transcript": {"type": "string", "minLength": 250, "maxLength": 1100},
         "word_timestamps_path": {"type": "string", "minLength": 1},
         "alignment_report_path": {"type": "string", "minLength": 1},
-        "speaker_consent": {"const": true}
-      }
+        "voice_rights_verified": {"const": true},
+        "speaker_consent": {"type": "boolean"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "human"}}},
+          "then": {
+            "required": ["speaker_consent"],
+            "properties": {"speaker_consent": {"const": true}}
+          }
+        }
+      ]
     },
     "background": {
       "type": "object",

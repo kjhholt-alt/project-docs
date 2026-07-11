@@ -1,9 +1,10 @@
 # GambaTime Channel Quality Study
 
 **Study date:** 2026-07-10/11
-**Decision:** Keep the existing channel, stop factory-volume publishing, and
-build a three-video **EvidenceCut** pilot: real human narration, owned gameplay,
-claim-matched evidence inserts, specific player impact, and no early CTA.
+**Decision:** Keep the existing channel and full production cadence while
+rolling **EvidenceCut** into the live workflow: consistent narration, owned
+gameplay, claim-matched evidence inserts, specific player impact, and no early
+CTA. Improvements ship beside current output instead of pausing it.
 
 ## Executive verdict
 
@@ -21,8 +22,8 @@ gaming desk: 227 unique public videos across 32 active UTC dates, a median six
 uploads per active date, a 26-upload peak date, repeated title templates,
 anonymous TTS, and little visible evidence or editorial identity.
 
-The correct strategy is **factory to newsroom**, not more automation and not a
-new channel yet.
+The correct strategy is **a continuously improving newsroom at factory speed**,
+not a paused pilot and not a new channel yet.
 
 ## Method and limits
 
@@ -160,8 +161,9 @@ host reaction and extracts a complete opinion rather than summarizing news.
    moving pixels behind captions.
 5. **Original interpretation.** The viewer receives a verdict, implication, or
    firsthand discovery that is absent from the source article.
-6. **Cadence restraint.** The closest repeatable winners publish roughly once a
-   day or less, not six interchangeable uploads per day.
+6. **Cadence is not the experiment.** The closest winners publish roughly once
+   a day or less, but GambaTime will keep full throughput and use tagged rolling
+   cohorts so creative improvements can be measured without slowing production.
 7. **Value before asks.** None of the sampled breakout Shorts interrupted the
    opening payoff with a generic subscription pitch.
 
@@ -220,7 +222,8 @@ Each Short:
 - 28-38 seconds and approximately 95-125 words;
 - one verified claim, one player consequence, and one original verdict;
 - a primary source plus corroboration under the existing source gate;
-- real human narration; no face required;
+- one consistent synthetic voice by default, with optional human hero cuts and
+  no face requirement;
 - owned or explicitly rights-cleared gameplay as the motion bed;
 - three to six claim-matched evidence inserts;
 - active-word or very short karaoke captions;
@@ -243,16 +246,16 @@ and block unresolved number or proper-noun changes before rendering captions.
 
 ## Three-video proof
 
-1. Hold `GambaTimeDailyProduce` until EvidenceCut is ready.
-2. Select three current player-impact stories that independently clear source,
+1. Keep `GambaTimeDailyProduce` and `GambaTimePublishPump` enabled.
+2. Build and shadow-render EvidenceCut beside the current live renderer.
+3. Select three current player-impact stories that independently clear source,
    footage-rights, specificity, and relevance gates.
-3. Draft each as `claim -> receipt -> consequence -> verdict`.
-4. Record three short human narration files. Kruz does not need to appear on
-   camera; the system handles cleanup, word alignment, captions, visuals, and QC.
-5. Render locally, inspect contact sheets, and approve public canaries one at a
-   time.
-6. Publish no more than three per week and allow at least 72 hours before an
-   initial read.
+4. Draft each as `claim -> receipt -> consequence -> verdict`.
+5. Use the consistent production voice automatically; a Kruz narration take is
+   an optional quality variant, never a throughput gate.
+6. Promote passing EvidenceCuts into an increasing share of normal output while
+   production continues. Grade each edition when it reaches 72 hours; do not
+   wait 72 hours before making or publishing the next one.
 
 Relative proof thresholds, derived from GambaTime's current baseline:
 
@@ -265,16 +268,13 @@ Relative proof thresholds, derived from GambaTime's current baseline:
 Profile entries, Deals Hub outbounds, and a network-confirmed commission remain
 business metrics, not substitutes for creative quality.
 
-## Human voice gate
+## Narration strategy
 
-A human narrator is the highest-leverage quality upgrade in this benchmark. The
-small-channel breakout explicitly markets `real human voice not AI`, while the
-other strongest formats use named hosts or reviewers. The lowest-friction Kruz
-gate is three one-take narration files from supplied scripts.
-
-If Kruz does not want to narrate, EvidenceCut can still run with one consistent
-high-quality synthetic voice, but that is the lower-ceiling backup. Do not use a
-voice clone or imitate another creator.
+A human narrator remains a high-leverage quality upgrade in this benchmark, but
+it is not allowed to constrain output. The automatic lane uses one consistent,
+rights-safe synthetic voice and improves authorship through stronger scripts,
+receipts, timing, and verdicts. Human narration becomes an optional tagged hero
+variant whenever a take is available. Do not clone or imitate another person.
 
 ## What not to copy
 
@@ -298,7 +298,8 @@ voice clone or imitate another creator.
 
 ## Decisive next move
 
-Build **EvidenceCut**, not another general channel-study tool. Extend ProofCut
-with human narration ingest and timed evidence inserts, render one local matched
-proof, then prepare the three-video pilot and a separate reversible cleanup
-manifest. Public unlisting, metadata changes, and uploads remain Kruz-gated.
+Build **EvidenceCut** behind the running producer. Extend ProofCut with canonical
+script alignment, automatic narration support, optional human narration, and
+timed evidence inserts; shadow-render locally, then progressively promote the
+passing treatment without stopping current output. Public cleanup remains a
+separate reviewed action.
