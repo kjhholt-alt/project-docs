@@ -172,12 +172,15 @@ CTA.
 - First success is one genuine `youtube-profile` entry and one genuine outbound
   offer click. Business success is the first network-confirmed commission.
 
-## Remaining Kruz-only action
+## Remaining Studio gate
 
-In YouTube Studio, attach Related Video `qXfmFo0ih4I` to Short `_37uQjQ2xtg`.
-That field is Studio-only. It improves the in-platform content path, but the
-June recap needs a disclosed Deals Hub link in its long-form description before
-it can serve as a revenue bridge.
+Do **not** attach the currently queued Related Video `qXfmFo0ih4I` to Short
+`_37uQjQ2xtg`. The target is a generic June recap with 100 views, one like, no
+explicit Palworld chapter, and no Deals Hub link. The existing Palworld
+alternatives are legacy Shorts and are not automatically safe bridge content.
+Leave the field unset until a relevant, source-validated companion with an
+honest disclosed path exists. Attaching that eventual target is the remaining
+Kruz-only Studio action because the Data API exposes no writable field.
 
 ## Current official platform references
 
