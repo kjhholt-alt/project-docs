@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0.0",
+  "decision_date": "2026-07-15",
+  "project": "war-table",
+  "design_name": "The Commander's Table",
+  "status": "selected-design-bet",
+  "distribution": "local-only in project-docs; its GitHub remote is public; implementation belongs in the private war-table repository after design approval",
+  "thesis": "A tactile command instrument where every plan change is measured honestly—especially when it changes the odds.",
+  "primary_viewports": [
+    { "mode": "desktop", "width": 1920, "height": 1080 },
+    { "mode": "steam_deck", "width": 1280, "height": 800 },
+    { "mode": "ultrawide", "width": 3440, "height": 1440 },
+    { "mode": "deck_fallback", "width": 1280, "height": 720 }
+  ],
+  "figma_pages": [
+    "00 / Cover + thesis",
+    "01 / Current-state audit",
+    "02 / Direction studies",
+    "03 / Foundations",
+    "04 / Components",
+    "05 / Expedition flow — desktop",
+    "06 / Expedition flow — Steam Deck",
+    "07 / Ultrawide + edge cases",
+    "08 / Prototype + motion",
+    "09 / Accessibility + input",
+    "10 / Dev handoff"
+  ],
+  "direction_studies": [
+    {
+      "name": "Quiet Command",
+      "recommended": true,
+      "composition": "Table-first with collapsible force and Oracle edge rails."
+    },
+    {
+      "name": "Map Room",
+      "recommended": false,
+      "composition": "Pinned map and paper decision layers with reduced persistent telemetry."
+    },
+    {
+      "name": "Instrument Panel",
+      "recommended": false,
+      "composition": "Dense engraved controls with the fastest scan and least atmosphere."
+    }
+  ],
+  "prototype_flow": [
+    "run_map",
+    "mission_brief",
+    "planning_idle",
+    "unit_selected",
+    "oracle_compare",
+    "commit_warning",
+    "commit_sealed",
+    "combat",
+    "after_action",
+    "recruit_choice"
+  ],
+  "required_edge_states": [
+    "empty_deployment",
+    "unaffordable_unit",
+    "maximum_force_plus_reserve",
+    "oracle_measuring",
+    "oracle_no_measured_delta",
+    "oracle_unavailable",
+    "after_action_draw",
+    "deck_text_150_percent",
+    "ultrawide_interaction_core",
+    "input_hot_swap",
+    "long_copy_plus_35_percent"
+  ],
+  "baseline_capture_pack": [
+    "unity/_renders/arena_hud.png",
+    "unity/_renders/play_wide.png",
+    "unity/_renders/play_tight.png",
+    "unity/_renders/combat_beauty.png",
+    "unity/_renders/arena_result.png",
+    "unity/_renders/botd/f_0010.png"
+  ],
+  "prototype_fixture": {
+    "run": 7,
+    "operation": "Obsidian Relay",
+    "objective": "Annihilate",
+    "conditions": ["Terrain.Sample()", "Central wall", "Split deployment", "Stances enabled"],
+    "fixture_source": "ShowcaseScenario.ReferencePlayer() vs Spectre Jammer + Hunter-Killer Drone + Adamant Bulwark from EnemyArchetypes",
+    "player_units": ["Vanguard Rifleman", "Standard-Bearer", "Bulwark MBT"],
+    "enemy_units": ["Spectre Jammer", "Hunter-Killer Drone", "Adamant Bulwark"],
+    "selected_unit": "Standard-Bearer",
+    "dominant_threat": "Adamant Bulwark",
+    "prior_order": "UnitOrder.None; resolved stance Defensive; inherited priority LowestHp",
+    "current_order": "Stance Aggressive; inherited priority LowestHp",
+    "prior_win_rate_percent": 54,
+    "prior_confidence": "CoinFlip",
+    "prior_outcomes": { "wins": 108, "draws": 92, "losses": 0 },
+    "current_win_rate_percent": 74,
+    "current_confidence": "Favored",
+    "current_outcomes": { "wins": 148, "draws": 52, "losses": 0 },
+    "oracle_sample": 200,
+    "selected_unit_prior_survival_percent": 0,
+    "selected_unit_current_survival_percent": 0,
+    "bulwark_mbt_prior_survival_percent": 54,
+    "bulwark_mbt_current_survival_percent": 74,
+    "dominant_threat_prior_kills_per_battle": 1.46,
+    "dominant_threat_current_kills_per_battle": 1.26,
+    "median_win_ticks_prior": 14,
+    "median_win_ticks_current": 14,
+    "points_spent": 771,
+    "points_budget": 1500,
+    "custom_orders": 1,
+    "live_seed": 7,
+    "live_seed_excluded_from_oracle": true,
+    "live_result": {
+      "outcome": "PlayerWins",
+      "ticks": 14,
+      "mvp": "Bulwark MBT",
+      "mvp_kills": 3,
+      "bulwark_mbt_final_hp": 22,
+      "vanguard_rifleman_final_hp": 100,
+      "standard_bearer_fell_tick": 5,
+      "decisive_timeline": [
+        { "tick": 1, "actor": "Bulwark MBT", "event": "destroyed", "target": "Hunter-Killer Drone" },
+        { "tick": 5, "actor": "Adamant Bulwark", "event": "destroyed", "target": "Standard-Bearer" },
+        { "tick": 10, "actor": "Bulwark MBT", "event": "destroyed", "target": "Adamant Bulwark" },
+        { "tick": 14, "actor": "Bulwark MBT", "event": "destroyed", "target": "Spectre Jammer" }
+      ]
+    }
+  },
+  "forecast_provenance": {
+    "war_table_commit": "5a0bb2c",
+    "branch_at_measurement": "cycle6/integrate",
+    "seed_window": "1-201 excluding 7; exactly 200 samples",
+    "objective": "Annihilate",
+    "terrain": "Terrain.Sample()",
+    "stances_enabled": true,
+    "other_combat_toggles": "defaults",
+    "changed_axis": "Standard-Bearer stance only: auto Defensive to ordered Aggressive"
+  },
+  "variable_collections": {
+    "WT / Primitives": ["color", "space", "radius", "stroke", "duration", "opacity"],
+    "WT / Semantic": ["surface", "text", "border", "action", "friendly", "hostile", "warning", "success", "focus", "disabled"],
+    "WT / Layout": ["Desktop / 1920", "Deck / 1280", "Ultrawide / 3440"],
+    "WT / Accessibility": ["Default", "High contrast", "Deuteranopia safe", "Protanopia safe", "Tritanopia safe", "Shapes only"],
+    "WT / Prototype state": ["phase", "selected-unit", "stance", "priority", "oracle-prior-wins", "oracle-prior-draws", "oracle-prior-losses", "oracle-current-wins", "oracle-current-draws", "oracle-current-losses", "oracle-prior-confidence", "oracle-current-confidence", "oracle-status", "intel-open", "input-mode", "text-scale", "reduced-motion"]
+  },
+  "figma_plan_fit": {
+    "assumed_plan": "Professional or higher",
+    "max_modes_used_in_one_collection": 6,
+    "professional_mode_limit_per_collection_verified_2026_07_15": 10,
+    "paid_features_used": ["Variable modes", "Variables and conditional logic in prototypes", "Unlimited version history"]
+  },
+  "palette": {
+    "ink/950": "#090B0A",
+    "gunmetal/900": "#121715",
+    "gunmetal/800": "#1B221F",
+    "steel/600": "#5A6862",
+    "felt/800": "#1D3A31",
+    "felt/650": "#315448",
+    "bone/100": "#DED7C9",
+    "bone/300": "#B6AEA0",
+    "brass/500": "#A98955",
+    "friendly/500": "#639A91",
+    "hostile/500": "#BF6B63",
+    "warning/500": "#C38C45",
+    "focus/400": "#E3C77D"
+  },
+  "contrast_proof_on_gunmetal_900": {
+    "bone/100": 12.66,
+    "bone/300": 8.24,
+    "brass/500": 5.52,
+    "friendly/500": 5.66,
+    "hostile/500": 4.74,
+    "warning/500": 6.18,
+    "focus/400": 10.98,
+    "steel/600_non_text": 3.10
+  },
+  "high_contrast_palette": {
+    "surface": "#0A0E0C",
+    "primary_text": "#FFF8E8",
+    "secondary_text": "#DED5C4",
+    "strong_border": "#73837B",
+    "friendly": "#7FC6BB",
+    "hostile": "#F08A7D",
+    "warning": "#F3B968",
+    "focus": "#FFE08A"
+  },
+  "high_contrast_proof_on_surface": {
+    "primary_text": 18.36,
+    "secondary_text": 13.34,
+    "strong_border": 4.87,
+    "friendly": 9.90,
+    "hostile": 7.99,
+    "warning": 11.05,
+    "focus": 15.06
+  },
+  "accessibility_mode_behavior": {
+    "default": "semantic hue plus shape where critical",
+    "high_contrast": "high-contrast palette plus shape and labels",
+    "deuteranopia_safe": "mandatory allegiance shapes, labels, and patterned fills",
+    "protanopia_safe": "mandatory allegiance shapes, labels, and patterned fills",
+    "tritanopia_safe": "mandatory allegiance shapes, labels, and patterned fills",
+    "shapes_only": "remove allegiance hue; retain shapes, patterns, labels, focus, and warning"
+  },
+  "type_system": {
+    "status": "recommended pending controlled type proof",
+    "display": "Barlow Condensed",
+    "interface": "IBM Plex Sans",
+    "telemetry": "IBM Plex Mono",
+    "deck_minimum_telemetry_px": 12,
+    "deck_body_px": 15,
+    "deck_target_px": 48
+  },
+  "type_trials": [
+    { "name": "Command instrument", "display": "Barlow Condensed", "interface": "IBM Plex Sans", "telemetry": "IBM Plex Mono", "recommended": true },
+    { "name": "Editorial field manual", "display": "Archivo Narrow", "interface": "Source Sans 3", "telemetry": "IBM Plex Mono", "recommended": false },
+    { "name": "Restrained system", "display": "IBM Plex Sans", "interface": "IBM Plex Sans", "telemetry": "IBM Plex Mono", "recommended": false }
+  ],
+  "controller_grammar": {
+    "navigate": "D-pad or left stick",
+    "grid_cursor": "D-pad or left stick, one cell at a time",
+    "pick_place_confirm": "A",
+    "cancel_back": "B",
+    "cycle_units": "LB / RB",
+    "order_sheet": "X while a unit is selected",
+    "oracle_toggle": "Y during planning",
+    "camera": "Right stick orbit; triggers zoom; stick press reset",
+    "commit": "Hold A for 450ms while Commit control is focused",
+    "combat_pause_speed": "X / Y",
+    "pause_settings": "Menu"
+  },
+  "components": [
+    "SituationStrip",
+    "ObjectivePlate",
+    "ResourceCounter",
+    "ForceTray",
+    "UnitPlate",
+    "UnitNameplate",
+    "TraitMark",
+    "RoleGlyph",
+    "OrderSheet",
+    "StanceControl",
+    "TargetPriorityControl",
+    "ConditionalTriggerRow",
+    "IntelHandle",
+    "OraclePanel",
+    "ForecastReadout",
+    "SurvivalRow",
+    "ThreatRow",
+    "PlanDelta",
+    "CommitControl",
+    "ControllerHint",
+    "FocusFrame",
+    "CombatConditionBar",
+    "ObjectiveProgress",
+    "CombatSpeedControl",
+    "ConsequentialFeedRow",
+    "AfterActionHeader",
+    "CasualtyRow",
+    "TimelineEvent",
+    "RewardChoice",
+    "RouteNode",
+    "RelicMark",
+    "SettingsRow",
+    "Toast",
+    "ConfirmSheet"
+  ],
+  "component_variant_axes": [
+    "phase",
+    "state",
+    "input",
+    "density",
+    "contrast",
+    "allegiance",
+    "evidence_state"
+  ],
+  "screen_occupancy_gates": {
+    "planning_world_min_percent": 62,
+    "combat_world_min_percent": 80
+  },
+  "implementation": {
+    "unity_version": "6000.0.77f1",
+    "feature_flag": "CommanderTableUiV1",
+    "branch_precondition": "Integrate cycle6/integrate cleanly before implementation; recapture baselines from the implementation commit",
+    "current_unity_dlls": ["WarTable.Sim.dll", "WarTable.Content.dll"],
+    "game_layer_target_framework": "net9.0",
+    "game_layer_unity_compatible": false,
+    "whole_game_retarget_diagnostic": {
+      "forced_target": "netstandard2.1 with LangVersion=latest",
+      "result": "failed",
+      "error_count": 741,
+      "representative_causes": ["IsExternalInit", "required-member attributes", "System.Text.Json APIs", "ImmutableDictionary"],
+      "post_diagnostic_normal_build": "net9.0 restore/build passed with 0 warnings and 0 errors"
+    },
+    "shared_planning_boundary": {
+      "required_project": "src/WarTable.Planning/WarTable.Planning.csproj",
+      "target_frameworks": ["net9.0", "netstandard2.1"],
+      "allowed_project_dependencies": ["WarTable.Sim", "WarTable.Content"],
+      "minimum_shared_responsibilities": ["UnitOrder", "BattleComposer and StancePolicy", "deterministic Oracle seed-sweep core", "ForceForecast", "UnitOutlook", "ThreatRead", "forecast bands"],
+      "game_only_adapter": "Recorded RunStep translation and the compatibility PreviewOracle facade remain in WarTable.Game",
+      "unity_plugin_required": "WarTable.Planning.dll",
+      "no_logic_copy": true,
+      "parity_fixture": "Obsidian Relay at war-table commit 5a0bb2c",
+      "parity_rule": "Identical planning request must return a field-for-field identical forecast through the Game facade and Unity-facing shared entry point"
+    },
+    "current_input_audit": "Legacy Input.* mouse paths, StandaloneInputModule, no com.unity.inputsystem package",
+    "required_action_maps": ["UI", "PlanningTable", "Camera", "Combat"],
+    "recommended_ui_system": "UI Toolkit for the new shell; retain uGUI fallback until parity",
+    "authoritative_sources": [
+      "DeployController.cs",
+      "PreviewOracle",
+      "BattleStats",
+      "ReplayLog",
+      "GameSettings"
+    ],
+    "presentation_adapters_required": [
+      "OracleViewModel",
+      "OracleStateAdapter",
+      "AfterActionTimelineAdapter",
+      "InputGlyphService"
+    ],
+    "additive_settings_required": ["TextScale", "ReducedMotion", "HighContrast"],
+    "data_contract": {
+      "native_orders": {
+        "stances": ["Balanced", "Aggressive", "Defensive", "Guard", "HoldFire"],
+        "priorities": ["Nearest", "LowestHp", "FocusHighestAttack", "FinishWounded"],
+        "triggers": ["HpBelow30", "AlliesBelow2"]
+      },
+      "oracle_native": ["Sample", "Wins", "Draws", "Losses", "WinRate", "DrawRate", "LossRate", "Confidence", "Force", "TopThreats", "MedianWinTicks"],
+      "after_action_native": ["Unit name", "Kills", "Damage dealt", "Survived", "MVP", "PlayerWon", "Side survivor totals", "Side kill totals"],
+      "derived_presentation": ["Prior/current forecast snapshot", "Decisive event ranking", "Cause summary", "Objective outcome copy", "Active input glyph mapping"],
+      "simulation_source_changes": "none",
+      "existing_gameplay_path_used": "StancesEnabled plus authored UnitOrder; identical config/order input must compose identically under old and new UI",
+      "ui_feature_flag_outcome_effect": "none"
+    },
+    "first_slice": ["planning", "commit_transition", "combat", "after_action"],
+    "vision_only_until_run_state_presenter": ["run_map", "mission_brief_route_selection", "recruit_choice", "reward_shop_loop"],
+    "excluded_from_first_slice": ["Arena full redesign", "Codex", "all settings", "new mechanics", "3D asset replacement"]
+  },
+  "sprint_sequence": [
+    {
+      "id": "A",
+      "focus": "Figma design only",
+      "estimate": "3.5-4.5 focused hours",
+      "exit_gate": "Three composition studies and three type trials converge into an approved desktop, Steam Deck, and ultrawide prototype"
+    },
+    {
+      "id": "B-1",
+      "focus": "Shared planning and forecast seam",
+      "estimate": "2-4 focused hours",
+      "exit_gate": "WarTable.Planning loads in Unity and returns a field-for-field identical committed-fixture forecast"
+    },
+    {
+      "id": "B0",
+      "focus": "Input and controller foundation",
+      "estimate": "2-3 focused hours",
+      "exit_gate": "Mouse, gamepad, and Steam Deck action maps complete the first-slice interaction path"
+    },
+    {
+      "id": "B1",
+      "focus": "Unity vertical slice",
+      "estimate": "4-6 focused hours",
+      "exit_gate": "Planning through After Action passes state parity and headless render gates behind CommanderTableUiV1"
+    },
+    {
+      "id": "C",
+      "focus": "Feel and proof",
+      "estimate": "90-120 minutes",
+      "exit_gate": "Real-device play, motion, audio, typography, and screenshot comparison pass before old HUD retirement"
+    }
+  ],
+  "figma_acceptance": [
+    "Three composition studies reviewed before high fidelity",
+    "Three controlled type trials reviewed with real fixture copy",
+    "All required desktop and Steam Deck frames present",
+    "Complete Run Map to Recruit Choice prototype",
+    "No missing fonts or text overflow",
+    "No essential unbound color, spacing, or typography values",
+    "All interactive components include focus, selected, disabled, and controller states",
+    "Default and high-contrast modes verified",
+    "Exact node and token ledger committed",
+    "Kruz explicitly approves the direction"
+  ],
+  "unity_acceptance": [
+    "No simulation-source or determinism-contract changes",
+    "Unity loads WarTable.Planning.dll and contains no copied planning or Oracle implementation",
+    "Game facade and Unity-facing shared entry point return identical committed-fixture forecasts",
+    "CommanderTableUiV1 alone does not alter battle setup or outcome",
+    "Existing suite remains green",
+    "Planning, Oracle, combat, and result state parity",
+    "1280x800 and 1920x1080 headless captures",
+    "Controller-only completion",
+    "Correct active input glyphs",
+    "No essential text below 12px at 1280x800",
+    "Rollback flag retained until proof passes"
+  ]
+}
