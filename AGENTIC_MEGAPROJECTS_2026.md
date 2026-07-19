@@ -30,9 +30,30 @@ That's a strong first-night signal against the 30-day interest bar — the quest
 | swe-agent-platform | own repo `github.com/kjhholt-alt/swe-agent-platform` | standalone |
 | llm-benchmark-suite | own repo `github.com/kjhholt-alt/llm-benchmark-suite` | standalone (rescued 2026-07-01 — see below) |
 | research-agent-platform | subdir of `operator-suite` master (PR #100) | lives inside the fleet repo |
-| agent-os | subdir of `operator-suite` master (PR #99) | lives inside the fleet repo |
+| agent-os | **own repo `github.com/kjhholt-alt/agent-os`** (extracted 2026-07-01) | standalone; `Projects/agent-os` is a vestigial pre-extraction copy |
 
 Two are standalone repos, two are operator-suite subdirs. Not wrong, just inconsistent — worth normalizing to one convention (recommend: all standalone, to keep the fleet repo about the fleet). Non-urgent.
+
+### agent-os subdir removal — now SAFE (updated 2026-07-18)
+This doc's reconciliation plan called the `Projects/agent-os` subdir
+"vestigial, to be git-rm'd". **That was unsafe as written between 2026-07-01
+and 2026-07-18.** The two copies had diverged and *neither was a superset*: the
+subdir held the **Loop Kernel** (`src/agent_os/loop/` — the domain-agnostic
+grounded self-improvement loop) which existed **nowhere else**, while the
+standalone repo held all of Phase 2. A `git rm` in that window would have
+destroyed the Loop Kernel outright.
+
+**Resolved 2026-07-18:** the Loop Kernel was ported into the standalone repo
+(commit `928e292` on `main`) — source, `docs/LOOP_KERNEL.md`, and all 4 test
+files, verified green there (8 offline tests pass, 1 e2e proof deselected, ruff
+clean). **The subdir is now safe to remove** — nothing in it is the only copy
+of anything.
+
+It was deliberately **not** deleted by the porting session: removing it touches
+the umbrella repo several lanes share, so it deserves its own deliberate pass
+rather than being a side effect. Before deleting, re-confirm the port is still
+present upstream — `git ls-remote git@github.com:kjhholt-alt/agent-os.git main`
+and check `src/agent_os/loop/` exists on `main` ([[feedback_verify_before_delete]]).
 
 ## Git cleanup done 2026-07-01
 - **llm-benchmark-suite was stranded** — its Phase 1 landed ONLY on the stale `chore/magnum-opus-phase-0-1-docs` branch, never on master. Rescued into its own repo (commit `d834ca3`), so it's safe regardless of that branch's fate.
