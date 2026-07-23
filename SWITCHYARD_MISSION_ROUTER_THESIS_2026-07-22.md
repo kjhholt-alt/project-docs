@@ -277,13 +277,27 @@ Use Python for the core. Workflow Compiler, Greenlight, Hermes, meters, headroom
 
 Keep ACP out of Phase 0. The core route function and receipt schema should be pure and independently testable; the terminal formatter, future ACP server, and future Flight Deck adapter become thin clients over it.
 
+## Implementation receipt — 2026-07-22
+
+The first proof is now built rather than hypothetical:
+
+- Winget resolved and installed Zed **1.12.0** silently. Zed was not launched, made default, or given migrated editor settings.
+- The local sidecar pins `@agentclientprotocol/codex-acp` **1.1.7** and its compatible `@openai/codex` **0.145.0** under `~/.operator/switchyard/codex-acp`; no API key was added.
+- A headless ACP v1 smoke initialized Codex, created a session whose reported current mode was exactly `read-only`, advertised client filesystem writes and terminal access as false, and closed the session cleanly.
+- The standard-library-only `switchyard` package reuses `studio.workflow_compiler.v1`, reads Greenlight, Model Draft Room, Hermes Director, and Headroom, and writes JSON/HTML receipts without dispatching work.
+- The first live `design-L` route is `shadow-hold`: Greenlight is stale and has one Haiku observation; the exact Draft Room receipt has one Sonnet/high observation per lane and an unreplicated efficacy claim; the model families conflict. Switchyard selects neither.
+- Verification passes sixteen unit tests, Ruff, mypy, compileall, live receipt generation, Zed CLI-help smoke, and the real ACP session handshake/close.
+- A project-local `.zed/settings.json` exposes `switchyard-codex-readonly`, and `OPEN_SWITCHYARD_LAB.cmd` refreshes the receipt before opening the lab when Kruz chooses to double-click it.
+
+The ACP process is a tested surface adapter, not a dependency of the routing core. The in-app Browser exposed no instance, and the no-popup rule kept Zed closed during the autonomous pass, so screenshot/click proof and the first native Terminal Thread remain explicit user-visible gates. Direct official ACP passed; `acpx` is no longer required for the first proof and should be added only if a real headless session-management gap appears.
+
 ## First proof sprint
 
 ### The next 60-minute proof packet
 
 If Kruz greenlights the next sprint, spend the first hour proving the shell/runtime boundary before building Switchyard:
 
-1. **0–10:** install Zed 1.11.3 from Winget, select a familiar keymap, and open only a disposable git fixture. Do not migrate settings or make it the default editor.
+1. **0–10:** install the current stable Zed from Winget (resolved to 1.12.0), select a familiar keymap, and open only a disposable git fixture. Do not migrate settings or make it the default editor.
 2. **10–22:** run the same read-only orientation task in Zed Terminal Threads through native Codex and Claude; prove existing subscription auth and instruction files without an adapter.
 3. **22–35:** add Codex ACP 1.1.7 as a reviewed custom agent in Zed, point it at the installed Codex binary, start in read-only mode, and repeat the task; inspect permission prompts, diffs, thread history, and ACP logs.
 4. **35–50:** source-audit and pin `acpx` 0.12.0 plus an exact Codex adapter, then run a deny-all handshake and a disposable approve-reads session. Check Windows cwd, cancellation, JSON, and resume. No API keys and no `@latest` execution.
@@ -345,4 +359,4 @@ If the policy proves useful but the standalone command does not, merge the pure 
 
 ## Decisive recommendation
 
-Keep Claude on Flight Deck. Put the next hour into a pinned `acpx` + Zed ACP bakeoff in a disposable repo, with explicit deny/read-only permissions. If that passes, put the following build hour into the read-only Switchyard receipt compiler. Build only the evidence/policy/receipt layer that existing runtimes lack. If that layer becomes trustworthy, it can power Zed, Flight Deck, Orbit, and a terminal without betting the company on any one shell or rewriting commodity plumbing.
+Keep Claude on Flight Deck. The direct pinned Zed/Codex ACP boundary and the read-only Switchyard compiler now pass headlessly; do not add `acpx` merely to create another layer. Kruz's next move is the one-click Zed visual check, followed by twenty real shadow receipts. Build only the evidence/policy/receipt layer that existing runtimes lack. If that layer earns promotion, it can power Zed, Flight Deck, Orbit, and a terminal without betting the company on any one shell or rewriting commodity plumbing.
