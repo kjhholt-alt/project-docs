@@ -93,7 +93,7 @@ These are not just price settings. They should account for subscription quota, c
 
 ## Evidence check from tonight
 
-Flight Deck advanced independently through the P4 source merge while this research was running: clean `master` at `83c9557`; P4 commits report clean package/typecheck and 129/129 unit tests, while the last P3 truth pass records 8/8 extension-host tests and a proved install. It now includes a read-only integration board, honestly labeled meter strip, attach/resume, responsive layout, live agents, honest needs-you strip, peek follow-mode, keyboard navigation, and broken-source honesty fix. Its `STATUS.md` has not yet advanced beyond P3, so P4 install/status truth and the real click path remain open. Switchyard stayed out of that repo and should later offer one stable seam before Flight Deck's existing Greenlight spawn action:
+Flight Deck advanced independently through the P4 source merge while this research was running: clean `master` at `83c9557`; Codex independently reran clean typecheck and 129/129 unit tests, while the last P3 truth pass records 8/8 extension-host tests and a proved install. It now includes a read-only integration board, honestly labeled meter strip, attach/resume, responsive layout, live agents, honest needs-you strip, peek follow-mode, keyboard navigation, and broken-source honesty fix. Its `STATUS.md` has not yet advanced beyond P3, so P4 install/status truth and the real click path remain open. Switchyard stayed out of that repo and should later offer one stable seam before Flight Deck's existing Greenlight spawn action:
 
 ```text
 goal → Switchyard route receipt → Greenlight spawn → Flight Deck session/proof view
