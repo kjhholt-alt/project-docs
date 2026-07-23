@@ -99,13 +99,13 @@ Flight Deck advanced to installed P2.5 while this research was running: 100/100 
 goal → Switchyard route receipt → Greenlight spawn → Flight Deck session/proof view
 ```
 
-The existing Model Draft Room was asked to draft this exact design mission against a strict confirmed `design-l` contract. It returned **HOLD**: every exact lane has only one observation on that fixture and no lane cleared the full outcome/proof contract.
+The existing Model Draft Room was asked to draft this exact design mission against a confirmed `design-l` contract. Its persisted receipt selects Claude Sonnet 4.6/high and solo execution, but every exact lane has only one observation on that fixture and the receipt explicitly holds any public efficacy claim as unreplicated.
 
 The frozen prior serial formation also remains a measured hold: the Sonnet scout → Opus lead → GPT reviewer used **6.43× tokens** and **4.69× sequential time** while scoring below the solo baseline. Therefore the first Switchyard policy must not assume that more agents are better.
 
 The current Greenlight table is useful but uneven: it contains live recommendations across 18 task classes, while several classes still have only one or a few observations. Switchyard must carry sample depth and confidence into the receipt instead of flattening the table into certainty.
 
-Tonight's `design-L` conflict is the exact product proof: Greenlight currently recommends Haiku from one observation per listed tier, while Model Draft Room's stricter exact-lane contract returns HOLD. Neither source should silently overwrite the other. Switchyard should expose the disagreement, apply the mission's proof bar, and remain in shadow/HOLD until evidence improves.
+Tonight's `design-L` conflict is the exact product proof: Greenlight currently recommends Haiku from one observation per listed tier, while Model Draft Room's exact-lane receipt selects Sonnet/high from one observation per lane and holds the public efficacy claim as unreplicated. Neither source should silently overwrite the other. Switchyard should expose the disagreement, apply the mission's proof bar, and keep the route in shadow until replicated evidence improves.
 
 Freshness also differs inside one source family right now: `headroom/state.json` is four days stale while `headroom/flight/live.json` is current. A route must timestamp and reconcile each input independently; “headroom available” is not enough. Stale posture can inform history but cannot authorize a live heavy lane.
 
@@ -125,7 +125,7 @@ Freshness also differs inside one source family right now: `headroom/state.json`
   },
   "evidence": {
     "confidence": "directional",
-    "reason": "No exact lane clears the confirmed contract; one observation per lane."
+    "reason": "Sources disagree and exact evidence is unreplicated; one observation per lane."
   },
   "verification": ["schema", "unit tests", "diff check", "human product verdict"],
   "fallback": ["collect shadow outcome", "re-evaluate exact lanes", "remain held"],
