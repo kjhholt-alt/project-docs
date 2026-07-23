@@ -286,8 +286,8 @@ The first proof is now built rather than hypothetical:
 - A headless ACP v1 smoke initialized Codex, created a session whose reported current mode was exactly `read-only`, advertised client filesystem writes and terminal access as false, and closed the session cleanly.
 - The standard-library-only `switchyard` package reuses `studio.workflow_compiler.v1`, reads Greenlight, Model Draft Room, Hermes Director, Hermes capability health, Headroom, and local meters, and writes JSON/HTML receipts without dispatching work. Agent-health and quota fields are supporting diagnostics only; Claude percentages are explicitly labeled local transcript-I/O estimates.
 - The first live `design-L` route is `shadow-hold`: Greenlight is stale and has one Haiku observation; the exact Draft Room receipt has one Sonnet/high observation per lane and an unreplicated efficacy claim; the model families conflict. Switchyard selects neither.
-- Verification passes seventeen unit tests, Ruff, mypy, compileall, live receipt generation, Zed CLI-help smoke, and the real ACP session handshake/close.
-- A project-local `.zed/settings.json` exposes `switchyard-codex-readonly`, and `OPEN_SWITCHYARD_LAB.cmd` refreshes the receipt before opening the lab when Kruz chooses to double-click it.
+- Verification passes eighteen unit tests, Ruff, mypy, compileall, live receipt generation, Zed CLI-help smoke, launcher-argument regression, and the real ACP session handshake/close.
+- A project-local `.zed/settings.json` exposes `switchyard-codex-readonly`, and `OPEN_SWITCHYARD_LAB.cmd` refreshes the receipt before opening the project in Zed and the rendered report in the default browser when Kruz chooses to double-click it.
 
 The ACP process is a tested surface adapter, not a dependency of the routing core. The in-app Browser exposed no instance, and the no-popup rule kept Zed closed during the autonomous pass, so screenshot/click proof and the first native Terminal Thread remain explicit user-visible gates. Direct official ACP passed; `acpx` is no longer required for the first proof and should be added only if a real headless session-management gap appears.
 
