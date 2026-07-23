@@ -1,7 +1,7 @@
 # Switchyard — Cross-Agent Mission Router Thesis
 
 **Date:** 2026-07-22
-**Status:** Recommended next lane; shadow-mode proof first
+**Status:** v0.1 shipped to both master branches; shadow/read-only proof only
 **Decision:** Do not build or fork an editor yet. Trial Zed as an alternate shell and build the missing routing brain as an editor-independent local tool.
 
 ## The one-line product
