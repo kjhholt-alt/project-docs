@@ -62,7 +62,7 @@ Result: `shadow-hold`, unresolved model, `HOLD` harness, solo formation, executi
 
 ## Verification
 
-- Eighteen `unittest` cases passed, including launcher-argument coverage against Zed's installed CLI help.
+- Nineteen `unittest` cases passed, including visible supporting-warning behavior and launcher-argument coverage against Zed's installed CLI help.
 - Ruff passed.
 - mypy passed all seven source files.
 - compileall passed.
