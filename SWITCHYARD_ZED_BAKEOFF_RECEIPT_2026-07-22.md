@@ -49,6 +49,8 @@ The live route used the existing Workflow Compiler rather than creating a second
 - Model Draft Room `design-l`: selects Claude Sonnet 4.6/high, one exact observation per lane, solo formation, public efficacy `hold-unreplicated`.
 - Hermes Director: 100/100 L4, safe-local clear, zero human gates.
 - Headroom state/flight: fresh and not in game mode.
+- Hermes capability health: 15 enabled agents, safety OK, zero recent agent errors.
+- Local meters: Claude 5-hour transcript-I/O estimates and Codex session activity are displayed for operator awareness but do not participate in routing.
 
 Result: `shadow-hold`, unresolved model, `HOLD` harness, solo formation, execution disabled. Hold codes:
 
@@ -60,7 +62,7 @@ Result: `shadow-hold`, unresolved model, `HOLD` harness, solo formation, executi
 
 ## Verification
 
-- Sixteen `unittest` cases passed.
+- Seventeen `unittest` cases passed.
 - Ruff passed.
 - mypy passed all seven source files.
 - compileall passed.
