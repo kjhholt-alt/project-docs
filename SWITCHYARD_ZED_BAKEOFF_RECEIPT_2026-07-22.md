@@ -70,6 +70,7 @@ Result: `shadow-hold`, unresolved model, `HOLD` harness, solo formation, executi
 - HTML escaping/injection regression passed.
 - Zed CLI help returned successfully without launching the editor.
 - Real ACP v1 read-only session handshake and close passed.
+- Exact installed ACP dependency tree resolves adapter 1.1.7; npm audit reported zero known vulnerabilities.
 - Git staged-diff whitespace check passed.
 - Secret/full-access/trust-flag source scan returned no matches.
 
