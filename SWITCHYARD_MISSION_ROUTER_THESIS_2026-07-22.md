@@ -93,7 +93,7 @@ These are not just price settings. They should account for subscription quota, c
 
 ## Evidence check from tonight
 
-Flight Deck advanced to installed P2.5 while this research was running: 100/100 unit tests, 7/7 extension-host tests, attach/resume for Claude and Codex sessions, responsive multi-column layout with a real-render fix, and a live `claude agents --json` feed. That means the VS Code shell and terminal-switching problem is actively being solved by Claude. Switchyard should stay out of that repo and later offer one stable seam before Flight Deck's existing Greenlight spawn action:
+Flight Deck advanced independently through installed P3 while this research was running: clean `master` at `2ae52a3`, 127/127 unit tests, 8/8 extension-host tests, a read-only integration board, honestly labeled meter strip, proved ship script, fixed Codex-session mtime flake, attach/resume, responsive multi-column layout, and a live `claude agents --json` feed. That means the VS Code shell and terminal-switching problem is actively being solved by Claude. Switchyard stayed out of that repo and should later offer one stable seam before Flight Deck's existing Greenlight spawn action:
 
 ```text
 goal → Switchyard route receipt → Greenlight spawn → Flight Deck session/proof view
