@@ -79,7 +79,7 @@ Result: `shadow-hold`, unresolved model, `HOLD` harness, solo formation, executi
 - Zed stayed closed to honor the no-popup workflow; Kruz's first double-click is the real visual/interaction proof.
 - Native Codex and Claude Terminal Threads still need that visible Zed check.
 - Greenlight policy freshness and route sample depth block live Switchyard promotion.
-- No Flight Deck code changed. Claude independently shipped P3 at `2ae52a3` with 127/127 unit and 8/8 extension-host checks; its VS Code lane remains independent.
+- No Flight Deck code changed. Claude independently merged P4 source at `83c9557`; its commits report 129/129 unit plus clean package/typecheck, while the last P3 truth pass records 8/8 extension-host checks. P4 install/status truth and live clicks remain open; its VS Code lane remains independent.
 
 ## Next move
 
