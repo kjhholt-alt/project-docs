@@ -36,7 +36,7 @@ The adapter identified itself as Codex / `@agentclientprotocol/codex-acp` 1.1.7.
 
 Implementation surfaces:
 
-- `switchyard/core.py` — pure evidence reconciliation and signed route receipt.
+- `switchyard/core.py` — pure evidence reconciliation and deterministic content-digested route receipt (SHA-256 change detection, not a cryptographic signature).
 - `switchyard/render.py` — self-contained human-readable HTML.
 - `switchyard/acp_smoke.py` — bounded ACP initialize/session/close proof.
 - `switchyard/.zed/settings.json` — project-scoped pinned read-only adapter.
