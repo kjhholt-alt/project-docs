@@ -5,6 +5,26 @@
 **Channel entry point:** https://buildkit.store/go/deals  
 **Affiliate network:** Instant Gaming (`igr=freegames4u`)
 
+## Truth refresh — 2026-07-26
+
+The distribution gate described in the original July 9 handoff is no longer
+open. A fresh anonymous fetch of the public `@GambaTime` channel header
+contains the exact tagged destination
+`https://buildkit.store/go/deals?src=youtube-profile` and reports one
+additional profile link. The formal profile-link step therefore must not be
+suggested as new work.
+
+The durable funnel baseline has been active since
+`2026-07-10T04:57:04+00:00`. The July 25 receipt reports 22 hub visits and 412
+non-synthetic outbound events; the traffic gate is still false and the intent
+gate is true. That unusually high outbound-to-hub ratio is an analytics signal,
+not proof of 412 real buyers or sales. Instant Gaming's commission ledger
+remains the only revenue truth.
+
+Current next move: Kruz checks the affiliate commission ledger. If it is zero,
+run one source-tagged, affiliate-disclosed GambaTime content test that points
+at the already-live hub; do not rebuild the catalog or re-add the profile link.
+
 ## Decision
 
 Build an owned game-discovery page under GambaTime and route the channel's existing audience through it before sending buyers to the affiliate storefront.
@@ -106,8 +126,8 @@ Known synthetic sources and verification slugs are excluded automatically.
 
 ## Next Attention
 
-The highest-leverage next move is distribution, not another product build. Add
-formal channel profile link #1 as `Game Deals` pointing to
-`https://buildkit.store/go/deals?src=youtube-profile`, add profile link #2 as
-`BuildKit Play`, then run `--start-experiment`. The next iteration should be
-driven by post-baseline clicked games and network commissions, not a larger catalog.
+The profile distribution and experiment baseline are already live. Verify the
+Instant Gaming commission ledger, then use one source-tagged content placement
+to distinguish real channel traffic from unattributed collector noise. The next
+iteration must be driven by verified commissions and source-attributed clicks,
+not a larger catalog.
